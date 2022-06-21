@@ -1,3 +1,5 @@
+set path+=**
+
 set relativenumber
 set nohlsearch
 set hidden
@@ -33,26 +35,44 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
 Plug 'romgrk/nvim-treesitter-context'
+Plug 'p00f/nvim-ts-rainbow'
 
 " Telescope plugins
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
+Plug 'kyazdani42/nvim-web-devicons' " optional, for file icons
+Plug 'kyazdani42/nvim-tree.lua'
+
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
-Plug 'rust-lang/rust.vim'
-
 Plug 'mbbill/undotree'
+Plug 'norcalli/nvim-colorizer.lua'
+Plug 'windwp/nvim-autopairs'
+
+" Language support
+Plug 'rust-lang/rust.vim'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 " Themes
 Plug 'gruvbox-community/gruvbox'
+Plug 'EdenEast/nightfox.nvim'
 
 call plug#end()
 
-colorscheme gruvbox
-highlight Normal guibg=none
+" Theme stuff
+colorscheme terafox 
+" highlight Normal guibg=none
 
 let mapleader = " "
+let g:rainbow_active = 1
+
+lua require('colorizer').setup()
+lua require("nvim-tree").setup()
+lua require("nvim-autopairs").setup {}
+
+lua require("lsp")
+lua require("treesitter")
 
 " Find files using Telescope command-line sugar.
 nnoremap <leader>ff <cmd>Telescope find_files<cr>

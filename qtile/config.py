@@ -26,22 +26,18 @@
 import os
 import subprocess
 
-from libqtile import bar, layout, widget, hook
-from libqtile.config import Click, Drag, Group, Key, Match, Screen
+from libqtile import layout, hook
+from libqtile.config import Click, Drag, Key, Match
 from libqtile.lazy import lazy
-from libqtile.utils import guess_terminal
 
 from screen import init_screen_main, init_screen, init_screen_vert
+from groups import init_groups, assign_group_keys
 
 mod = "mod4"
-terminal = guess_terminal()
+terminal = "alacritty"
 
 keys = [
-    # Switch screen
-    Key([mod, "control"], "1", lazy.to_screen(1)),
-    Key([mod, "control"], "2", lazy.to_screen(0)),
-    Key([mod, "control"], "3", lazy.to_screen(2)),
-         ### Switch focus of monitors
+    # Switch focus of monitors
     Key([mod], "period", lazy.prev_screen(), desc='Move focus to next monitor'),
     Key([mod], "comma", lazy.next_screen(), desc='Move focus to prev monitor'),
 
@@ -85,31 +81,8 @@ keys = [
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
 ]
 
-groups = [Group(i) for i in "123456789"]
-
-for i in groups:
-    keys.extend(
-        [
-            # mod1 + letter of group = switch to group
-            Key(
-                [mod],
-                i.name,
-                lazy.group[i.name].toscreen(),
-                desc="Switch to group {}".format(i.name),
-            ),
-            # mod1 + shift + letter of group = switch to & move focused window to group
-            Key(
-                [mod, "shift"],
-                i.name,
-                lazy.window.togroup(i.name, switch_group=True),
-                desc="Switch to & move focused window to group {}".format(i.name),
-            ),
-            # Or, use below if you prefer not to switch to that group.
-            # # mod1 + shift + letter of group = move focused window to group
-            # Key([mod, "shift"], i.name, lazy.window.togroup(i.name),
-            #     desc="move focused window to group {}".format(i.name)),
-        ]
-    )
+groups = init_groups()
+keys = assign_group_keys(keys, mod, groups)
 
 
 layout_theme = {
@@ -118,7 +91,6 @@ layout_theme = {
     "border_focus": "e1acff",
     "border_normal": "1D2330"
 }
-
 
 layouts = [
     layout.Max(**layout_theme),
