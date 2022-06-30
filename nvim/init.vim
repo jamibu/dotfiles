@@ -40,6 +40,7 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
+Plug 'ray-x/lsp_signature.nvim'
 
 " Snippet stuff
 Plug 'hrsh7th/cmp-vsnip'
@@ -65,8 +66,8 @@ Plug 'norcalli/nvim-colorizer.lua'
 Plug 'windwp/nvim-autopairs'
 
 " Language support
-Plug 'rust-lang/rust.vim'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+" Plug 'rust-lang/rust.vim'
+" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 " Themes
 Plug 'gruvbox-community/gruvbox'
@@ -75,7 +76,7 @@ Plug 'EdenEast/nightfox.nvim'
 call plug#end()
 
 " Theme stuff
-colorscheme terafox 
+colorscheme terafox
 " highlight Normal guibg=none
 
 let mapleader = " "
@@ -84,6 +85,8 @@ let g:rainbow_active = 1
 lua require('colorizer').setup()
 lua require("nvim-tree").setup()
 lua require("nvim-autopairs").setup {}
+
+lua require "lsp_signature".setup()
 
 lua require("lsp")
 lua require("treesitter")
@@ -169,9 +172,10 @@ nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescppe help_tags<cr>
 
-nnoremap <leader>n <cmd>NvimTreeToggle<cr>
+nnoremap <leader>nt <cmd>NvimTreeToggle<cr>
+nnoremap <leader>ut <cmd>UndotreeToggle<cr>
 
-augroup THE_PRIMEAGEN
+augroup whitespace
     autocmd!
     " autocmd BufWritePre *.lua Neoformat
     autocmd BufWritePre * %s/\s\+$//e
