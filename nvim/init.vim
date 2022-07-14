@@ -175,6 +175,8 @@ nnoremap <leader>fh <cmd>Telescppe help_tags<cr>
 nnoremap <leader>nt <cmd>NvimTreeToggle<cr>
 nnoremap <leader>ut <cmd>UndotreeToggle<cr>
 
+autocmd BufWritePre *.go lua vim.lsp.buf.formatting()
+
 augroup whitespace
     autocmd!
     " autocmd BufWritePre *.lua Neoformat
