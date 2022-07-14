@@ -63,3 +63,4 @@ require('lspconfig')['gopls'].setup{
       ["gopls"] = {}
     }
 }
+
