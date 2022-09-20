@@ -6,14 +6,14 @@ from libqtile.core.manager import Qtile
 
 def init_groups() -> list:
     groups = [
-        Group("1", spawn="firefox", layout="monadtall", persist=True),
+        Group("1", layout="monadtall", persist=True),
         Group("2", layout="monadtall", persist=True),
         Group("3", layout="monadtall", persist=True),
         Group("4", spawn="alacritty", layout="monadtall", persist=True),
         Group("5", layout="monadtall", persist=True),
         Group("6", layout="monadtall", persist=True),
         Group("7", layout="monadtall", persist=True),
-        Group("8", spawn="firefox", layout="monadtall", persist=True),
+        Group("8", layout="monadtall", persist=True),
         Group("9", layout="monadtall", persist=True),
         Group("0", layout="monadtall", persist=True),
     ]
@@ -28,10 +28,10 @@ def go_to_group(name: str) -> Callable:
             return
 
         if name in '123':
-            qtile.focus_screen(1)
+            qtile.focus_screen(0)
             qtile.groups_map[name].cmd_toscreen()
         elif name in "4567":
-            qtile.focus_screen(0)
+            qtile.focus_screen(1)
             qtile.groups_map[name].cmd_toscreen()
         elif name in "890":
             qtile.focus_screen(2)

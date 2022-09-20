@@ -1,4 +1,6 @@
-from libqtile import bar, widget
+import os
+from libqtile import bar, widget, qtile
+from widgets import volume
 
 
 def init_bar_main():
@@ -7,7 +9,6 @@ def init_bar_main():
             widget.Sep(linewidth=0, padding=10),
             widget.CurrentLayoutIcon(scale=0.75),
             widget.CurrentLayout(),
-            widget.Prompt(),
             widget.Spacer(),
             widget.GroupBox(
                 visible_groups=["1", "2", "3"],
@@ -39,9 +40,28 @@ def init_bar_main():
                 },
                 name_transform=lambda name: name.upper(),
             ),
-            widget.Systray(),
+            widget.CheckUpdates(
+                update_interval=1800,
+                distro="Arch_yay",
+                display_format="{updates} Updates",
+                foreground="#ffffff",
+                mouse_callbacks={
+                    'Button1':
+                    lambda: qtile.cmd_spawn(terminal + ' -e yay -Syu')
+                },
+                background="#2f343f"),
+            widget.Systray(icon_size = 20),
+            volume,
             widget.Clock(format="%a %b %H:%M"),
             widget.Sep(linewidth=0, padding=10),
+            widget.TextBox(
+                text='',
+                mouse_callbacks= {
+                    'Button1':
+                    lambda: qtile.cmd_spawn(os.path.expanduser('~/.config/rofi/powermenu.sh'))
+                },
+                foreground='#e39378'
+            )
         ],
         24,
         # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
@@ -55,7 +75,6 @@ def init_bar():
             widget.Sep(linewidth=0, padding=10),
             widget.CurrentLayoutIcon(scale=0.75),
             widget.CurrentLayout(),
-            widget.Prompt(),
             widget.Spacer(),
             widget.GroupBox(
                 visible_groups=["1", "2", "3"],
