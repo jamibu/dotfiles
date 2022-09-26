@@ -1,3 +1,5 @@
-#!/usr/bin/env bash 
+#!/usr/bin/env bash
 
 picom --experimental-backend -b
+autorandr --load work
+
