@@ -1,6 +1,7 @@
 import os
 from libqtile import bar, widget, qtile
 from widgets import volume
+from keys import terminal
 
 
 def init_bar_main():
@@ -8,7 +9,6 @@ def init_bar_main():
         [
             widget.Sep(linewidth=0, padding=10),
             widget.CurrentLayoutIcon(scale=0.75),
-            widget.CurrentLayout(),
             widget.Spacer(),
             widget.GroupBox(
                 visible_groups=["1", "2", "3"],
@@ -52,7 +52,9 @@ def init_bar_main():
                 background="#2f343f"),
             widget.Systray(icon_size = 20),
             volume,
-            widget.Clock(format="%a %b %H:%M"),
+            widget.Sep(linewidth=0, padding=10),
+            widget.TextBox(text="", font="sans", fontsize=18),
+            widget.Clock(format="%a %b %d %H:%M"),
             widget.Sep(linewidth=0, padding=10),
             widget.TextBox(
                 text='',
@@ -60,8 +62,10 @@ def init_bar_main():
                     'Button1':
                     lambda: qtile.cmd_spawn(os.path.expanduser('~/.config/rofi/powermenu.sh'))
                 },
-                foreground='#e39378'
-            )
+                foreground='#e39378',
+                fontsize=18
+            ),
+            widget.Sep(linewidth=0, padding=10),
         ],
         24,
         # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
@@ -74,7 +78,6 @@ def init_bar():
         [
             widget.Sep(linewidth=0, padding=10),
             widget.CurrentLayoutIcon(scale=0.75),
-            widget.CurrentLayout(),
             widget.Spacer(),
             widget.GroupBox(
                 visible_groups=["1", "2", "3"],
@@ -106,8 +109,8 @@ def init_bar():
                 },
                 name_transform=lambda name: name.upper(),
             ),
-            widget.TextBox(text="", font="sans"),
-            widget.Clock(format="%a %b %H:%M"),
+            widget.TextBox(text="", font="sans", fontsize=18),
+            widget.Clock(format="%a %b %d %H:%M"),
             widget.Sep(linewidth=0, padding=10),
         ],
         24

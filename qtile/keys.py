@@ -5,7 +5,7 @@ mod = "mod4"
 terminal = "alacritty"
 
 keys = [
-    Key([mod], "r", lazy.spawn("rofi -show combi"), desc="spawn rofi"),
+    Key([mod], "r", lazy.spawn("rofi -monitor -1 -show combi"), desc="spawn rofi"),
     # Switch focus of monitors
     Key([mod], "period", lazy.prev_screen(), desc='Move focus to next monitor'),
     Key([mod], "comma", lazy.next_screen(), desc='Move focus to prev monitor'),
