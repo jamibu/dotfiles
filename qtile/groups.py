@@ -6,14 +6,14 @@ from libqtile.core.manager import Qtile
 
 def init_groups() -> list:
     groups = [
-        Group("1", spawn="firefox", layout="monadtall", persist=True),
+        Group("1", layout="max", persist=True),
         Group("2", layout="monadtall", persist=True),
-        Group("3", layout="monadtall", persist=True),
+        Group("3", layout="max", persist=True),
         Group("4", spawn="alacritty", layout="monadtall", persist=True),
         Group("5", layout="monadtall", persist=True),
         Group("6", layout="monadtall", persist=True),
         Group("7", layout="max", persist=True),
-        Group("8", spawn="firefox", layout="max", persist=True),
+        Group("8", layout="max", persist=True),
         Group("9", spawn="teams", layout="max", persist=True),
         Group("0", layout="max", persist=True),
     ]
