@@ -54,7 +54,7 @@ def init_bar_main():
             volume,
             widget.Sep(linewidth=0, padding=10),
             widget.TextBox(text="", font="sans", fontsize=18),
-            widget.Clock(format="%a %b %d %H:%M"),
+            widget.Clock(format="%a %d %b %H:%M"),
             widget.Sep(linewidth=0, padding=10),
             widget.TextBox(
                 text='',
@@ -110,7 +110,7 @@ def init_bar():
                 name_transform=lambda name: name.upper(),
             ),
             widget.TextBox(text="", font="sans", fontsize=18),
-            widget.Clock(format="%a %b %d %H:%M"),
+            widget.Clock(format="%a %d %b %H:%M"),
             widget.Sep(linewidth=0, padding=10),
         ],
         24
