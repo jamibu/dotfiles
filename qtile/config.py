@@ -84,8 +84,8 @@ extension_defaults = widget_defaults.copy()
 
 screens = [
     init_screen_main(),
-    init_screen(),
     init_screen_vert(),
+    init_screen(),
 ]
 
 # Drag floating layouts.
