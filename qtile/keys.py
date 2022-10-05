@@ -7,8 +7,8 @@ terminal = "alacritty"
 keys = [
     Key([mod], "r", lazy.spawn("rofi -monitor -1 -show combi"), desc="spawn rofi"),
     # Switch focus of monitors
-    Key([mod], "period", lazy.prev_screen(), desc='Move focus to next monitor'),
-    Key([mod], "comma", lazy.next_screen(), desc='Move focus to prev monitor'),
+    Key([mod], "period", lazy.next_screen(), desc='Move focus to next monitor'),
+    Key([mod], "comma", lazy.prev_screen(), desc='Move focus to prev monitor'),
 
     # A list of available commands that can be bound to keys can be found
     # at https://docs.qtile.org/en/latest/manual/config/lazy.html
@@ -24,6 +24,8 @@ keys = [
     Key([mod, "shift"], "l", lazy.layout.shuffle_right(), desc="Move window to the right"),
     Key([mod, "shift"], "j", lazy.layout.shuffle_down(), desc="Move window down"),
     Key([mod, "shift"], "k", lazy.layout.shuffle_up(), desc="Move window up"),
+
+    Key([mod], "f", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen"),
     # Grow windows. If current window is on the edge of screen and direction
     # will be to screen edge - window would shrink.
     Key([mod, "control"], "h", lazy.layout.grow_left(), desc="Grow window to the left"),
