@@ -31,9 +31,9 @@ ShowInstallerIsoInfo() {
 }
 
 
-alias ls='ls --color=auto'
-alias ll='ls -lav --ignore=..'   # show long listing of all except ".."
-alias l='ls -lav --ignore=.?*'   # show long listing but no hidden dotfiles except "."
+alias ls='exa'
+alias l='exa -la'   # Detailed list with
+alias ll='exa -la --group-directories-first'   # Detailed list with dirs first
 
 [[ "$(whoami)" = "root" ]] && return
 
