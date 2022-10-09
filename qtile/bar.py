@@ -50,22 +50,24 @@ def init_bar_main():
                     lambda: qtile.cmd_spawn(terminal + ' -e yay -Syu')
                 },
                 background="#2f343f"),
-            widget.Systray(icon_size = 20),
+            widget.Systray(icon_size=18, font="JetBrainsMono Nerd Font", fontsize=14),
+            widget.Sep(linewidth=0, padding=5),
             volume,
-            widget.Sep(linewidth=0, padding=10),
-            widget.TextBox(text="", font="sans", fontsize=18),
+            widget.Sep(linewidth=0, padding=5),
+            widget.TextBox(text=" ", font="JetBrainsMono Nerd Font", fontsize=14),
             widget.Clock(format="%a %d %b %H:%M"),
-            widget.Sep(linewidth=0, padding=10),
+            widget.Sep(linewidth=0, padding=5),
             widget.TextBox(
-                text='',
+                text=' ',
                 mouse_callbacks= {
                     'Button1':
                     lambda: qtile.cmd_spawn(os.path.expanduser('~/.config/rofi/powermenu.sh'))
                 },
                 foreground='#e39378',
-                fontsize=18
+                fontsize=14,
+                font="JetBrainsMono Nerd Font"
             ),
-            widget.Sep(linewidth=0, padding=10),
+            widget.Sep(linewidth=0, padding=5),
         ],
         24,
         # border_width=[2, 0, 2, 0],  # Draw top and bottom borders

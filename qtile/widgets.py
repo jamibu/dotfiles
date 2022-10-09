@@ -14,8 +14,8 @@ colors = [
 
 
 widget_defaults = dict(
-    font='Cantarell',
-    fontsize=18,
+    font='JetBrainsMono Nerd Font',
+    fontsize=14,
     padding=1,
 )
 extension_defaults = widget_defaults.copy()
@@ -24,7 +24,7 @@ class MyVolume(widget.Volume):
         widget.Volume._configure(self, qtile, bar)
         self.volume = self.get_volume()
         if self.volume <= 0:
-            self.text = ''
+            self.text = '婢'
         elif self.volume <= 15:
             self.text = ''
         elif self.volume < 50:
@@ -35,7 +35,7 @@ class MyVolume(widget.Volume):
 
     def _update_drawer(self, wob=False):
         if self.volume <= 0:
-            self.text = ''
+            self.text = '婢'
         elif self.volume <= 15:
             self.text = ''
         elif self.volume < 50:
@@ -49,8 +49,8 @@ class MyVolume(widget.Volume):
                 f.write(str(self.volume) + "\n")
 
 volume = MyVolume(
-    fontsize=18,
-    font='Font Awesome 5 Free',
-    foreground=colors[4],
+    fontsize=14,
+    font='JetBrainsMono Nerd Font',
+    foreground=colors[5],
     mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn("pavucontrol")}
 )
