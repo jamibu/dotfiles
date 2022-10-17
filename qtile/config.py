@@ -48,11 +48,10 @@ layout_theme = {
 layouts = [
     layout.Max(**layout_theme),
     layout.MonadTall(**layout_theme),
-    layout.Columns(**layout_theme),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
     # layout.Matrix(),
-    # layout.MonadWide(),
+    layout.MonadWide(**layout_theme),
     # layout.RatioTile(),
     # layout.Tile(),
     # layout.TreeTab(),
