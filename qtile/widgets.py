@@ -26,22 +26,23 @@ class MyVolume(widget.Volume):
         if self.volume <= 0:
             self.text = '婢'
         elif self.volume <= 15:
-            self.text = ''
+            self.text = '奄'
         elif self.volume < 50:
-            self.text = ''
+            self.text = '奔'
         else:
-            self.text = ''
+            self.text = '墳'
+        self.draw()
         # drawing here crashes Wayland
 
     def _update_drawer(self, wob=False):
         if self.volume <= 0:
             self.text = '婢'
         elif self.volume <= 15:
-            self.text = ''
+            self.text = '奄'
         elif self.volume < 50:
-            self.text = ''
+            self.text = '奔'
         else:
-            self.text = ''
+            self.text = '墳'
         self.draw()
 
         if wob:
