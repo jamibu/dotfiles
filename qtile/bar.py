@@ -54,7 +54,7 @@ def init_bar_main():
             widget.Sep(linewidth=0, padding=5),
             volume,
             widget.Sep(linewidth=0, padding=5),
-            widget.TextBox(text=" ", font="JetBrainsMono Nerd Font", fontsize=14),
+            # widget.TextBox(text=" ", font="JetBrainsMono Nerd Font", fontsize=14),
             widget.Clock(format="%a %d %b %H:%M"),
             widget.Sep(linewidth=0, padding=5),
             widget.TextBox(
@@ -111,7 +111,7 @@ def init_bar():
                 },
                 name_transform=lambda name: name.upper(),
             ),
-            widget.TextBox(text="", font="sans", fontsize=18),
+            # widget.TextBox(text="", font="sans", fontsize=18),
             widget.Clock(format="%a %d %b %H:%M"),
             widget.Sep(linewidth=0, padding=10),
         ],
