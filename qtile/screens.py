@@ -5,7 +5,7 @@ from bar import init_bar, init_bar_main
 def init_screen_main():
     return Screen(
         top=init_bar_main(),
-        wallpaper="~/Pictures/nord_hills.jpg",
+        wallpaper="~/Pictures/yosemite_type_thing.jpg",
         wallpaper_mode="stretch",
     )
 
@@ -13,7 +13,7 @@ def init_screen_main():
 def init_screen():
     return Screen(
         top=init_bar(),
-        wallpaper="~/Pictures/nord_hills.jpg",
+        wallpaper="~/Pictures/yosemite_type_thing.jpg",
         wallpaper_mode="stretch",
     )
 
