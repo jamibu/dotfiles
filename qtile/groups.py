@@ -44,7 +44,7 @@ def assign_group_keys(keys: list, mod: str, groups: list) -> list:
     for g in groups:
         # Goes to group without switching
         keys.append(Key(
-            [mod],
+            [mod, "control"],
             g.name,
             lazy.function(go_to_group(g.name)),
             desc=f"Go to group {g.name}"
@@ -52,7 +52,7 @@ def assign_group_keys(keys: list, mod: str, groups: list) -> list:
 
         # Switches to group on current screen
         keys.append(Key(
-            [mod, "control"],
+            [mod],
             g.name,
             lazy.group[g.name].toscreen(),
             desc=f"Switch to group {g.name}",

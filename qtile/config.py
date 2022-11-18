@@ -40,7 +40,7 @@ keys = assign_group_keys(keys, mod, groups)
 
 layout_theme = {
     "border_width": 2,
-    "margin": 10,
+    "margin": 7,
     "border_focus": "e1acff",
     "border_normal": "1D2330"
 }
