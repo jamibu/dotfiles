@@ -7,7 +7,7 @@ return require('packer').startup(function()
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
-  -- For awesome syntax highlighting
+  -- Get that good syntax highlighting
   use('nvim-treesitter/nvim-treesitter', {
     run = ':TSUpdate'
   })
@@ -38,6 +38,14 @@ return require('packer').startup(function()
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-path'
 
+  -- Debugging in Nvim, it can be done!
+  use 'mfussenegger/nvim-dap'
+  use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+  use 'theHamsta/nvim-dap-virtual-text'
+  use 'nvim-telescope/telescope-dap.nvim'
+  use 'leoluz/nvim-dap-go'
+  use 'mfussenegger/nvim-dap-python'
+
   -- Evil code stealing robot
   use 'github/copilot.vim'
 
@@ -46,11 +54,16 @@ return require('packer').startup(function()
   use 'saadparwaiz1/cmp_luasnip'
   use "rafamadriz/friendly-snippets"
 
-  -- Auto close brackets, quotes etc.
+  -- Who has time to close their own brackets?
   use 'windwp/nvim-autopairs'
 
+  -- For fixing when I hit u with capslock on
   use "mbbill/undotree"
+
+  -- Magit but neovim
   use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
+
+  -- Fancy line
   use 'nvim-lualine/lualine.nvim'
 
   -- Pretty themes
