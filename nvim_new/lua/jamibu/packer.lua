@@ -63,6 +63,9 @@ return require('packer').startup(function()
   -- Magit but neovim
   use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
 
+  -- Jumping around
+  use { "ggandor/leap.nvim", requires = {"tpope/vim-repeat"} }
+
   -- Fancy line
   use 'nvim-lualine/lualine.nvim'
 
