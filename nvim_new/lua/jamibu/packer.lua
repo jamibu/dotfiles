@@ -37,6 +37,7 @@ return require('packer').startup(function()
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-path'
+  use 'onsails/lspkind.nvim'
 
   -- Debugging in Nvim, it can be done!
   use 'mfussenegger/nvim-dap'
@@ -65,6 +66,14 @@ return require('packer').startup(function()
 
   -- Jumping around
   use { "ggandor/leap.nvim", requires = {"tpope/vim-repeat"} }
+
+  -- Comments
+  use {
+    'numToStr/Comment.nvim',
+    config = function()
+        require('Comment').setup()
+    end
+  }
 
   -- Fancy line
   use 'nvim-lualine/lualine.nvim'
