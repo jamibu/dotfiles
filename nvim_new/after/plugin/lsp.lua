@@ -68,6 +68,13 @@ vim.opt.completeopt={"menu", "menuone", "noselect"}
 -- Set up nvim-cmp.
 local cmp = require'cmp'
 
+local ok, lspkind = pcall(require, "lspkind")
+if not ok then
+  return
+end
+
+lspkind.init()
+
 cmp.setup({
   snippet = {
     expand = function(args)
@@ -90,7 +97,32 @@ cmp.setup({
     { name = 'luasnip' }, -- For luasnip users.
   }, {
     { name = 'buffer' },
-  })
+  }),
+
+  formatting = {
+    -- Youtube: How to set up nice formatting for your sources.
+    format = lspkind.cmp_format {
+      with_text = true,
+      menu = {
+        buffer = "[buf]",
+        nvim_lsp = "[LSP]",
+        nvim_lua = "[api]",
+        path = "[path]",
+        luasnip = "[snip]",
+        gh_issues = "[issues]",
+        tn = "[TabNine]",
+      },
+    },
+  },
+
+  experimental = {
+    -- I like the new menu better! Nice work hrsh7th
+    native_menu = false,
+
+    -- Let's play with this for a day or two
+    ghost_text = false,
+  },
+
 })
 
 -- Set configuration for specific filetype.

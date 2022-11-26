@@ -1,4 +1,4 @@
-./nvim_new/plugin
+nvim_new/plugin/
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
