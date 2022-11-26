@@ -66,6 +66,15 @@ return require('packer').startup(function()
   -- Jumping around
   use { "ggandor/leap.nvim", requires = {"tpope/vim-repeat"} }
 
+  -- Highlight colour codes with colour
+  use 'norcalli/nvim-colorizer.lua'
+
+  -- Preview for markdown
+  use({
+    "iamcco/markdown-preview.nvim",
+    run = function() vim.fn["mkdp#util#install"]() end,
+})
+
   -- Fancy line
   use 'nvim-lualine/lualine.nvim'
 

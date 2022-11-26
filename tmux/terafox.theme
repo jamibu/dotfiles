@@ -1,0 +1,52 @@
+# Status update interval
+set -g status-interval 1
+
+# Basic status bar colors
+set -g status-style NONE
+
+# Left side of status bar
+set -g status-right "#[fg=#cbd9d8]%a %d %b #[fg=#cbd9d8,nobold,nounderscore,noitalics]%H:%M"
+set -g status-right-length "100"
+
+# Right side of status bar
+set -g status-left "#[fg=#aeafb0]#{@separator_session_name} #[fg=yellow]#S"
+set -g status-left-style fg=yellow
+set -g status-left-length "100"
+
+# Window status
+set -g window-status-format " #I:#W#F "
+set -g window-status-current-format " #I:#W#F "
+#
+# Current window status
+set -g window-status-current-style fg=#cbd9d8,bg=#2d4f56
+set -g window-status-style fg=#6d7f8b,bg=#254147
+
+# Window with activity status
+set -g window-status-activity-style fg=brightblack,bg=yellow
+
+# Window separator
+set -g window-status-separator " "
+
+# Window status alignment
+set -g status-justify centre 
+
+# Pane border
+set -g pane-border-style fg=brightblack,bg=default
+set -g pane-active-border-style fg=brightblack,bg=default
+
+# Pane number indicator
+set -g display-panes-colour red
+set -g display-panes-active-colour magenta
+
+# Clock mode
+set -g clock-mode-colour red
+set -g clock-mode-style 24
+
+# Message
+set -g message-style "fg=#cbd9d8,bg=#29394f"
+
+# Command message
+set -g message-command-style "fg=#cbd9d8,bg=#29394f"
+
+# Mode
+set -g mode-style "fg=#cbd9d8,bg=#29394f"
