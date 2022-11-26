@@ -37,6 +37,7 @@ return require('packer').startup(function()
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-path'
+  use 'onsails/lspkind.nvim'
 
   -- Debugging in Nvim, it can be done!
   use 'mfussenegger/nvim-dap'
@@ -73,7 +74,9 @@ return require('packer').startup(function()
   use({
     "iamcco/markdown-preview.nvim",
     run = function() vim.fn["mkdp#util#install"]() end,
-})
+  })
+  -- Comments
+  use {'numToStr/Comment.nvim'}
 
   -- Fancy line
   use 'nvim-lualine/lualine.nvim'
