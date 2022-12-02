@@ -63,6 +63,16 @@ require'lspconfig'.tsserver.setup{
   capabilities = capabilities,
 }
 
+require'lspconfig'.bashls.setup{
+  on_attach = attaches,
+  capabilities = capabilities,
+}
+
+require'lspconfig'.intelephense.setup{
+  on_attach = attaches,
+  capabilities = capabilities,
+}
+
 -- AUTO COMPLETION STUFF
 vim.opt.completeopt={"menu", "menuone", "noselect"}
 -- Set up nvim-cmp.
