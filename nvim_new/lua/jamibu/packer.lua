@@ -38,6 +38,7 @@ return require('packer').startup(function()
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-path'
   use 'onsails/lspkind.nvim'
+  use 'williamboman/mason.nvim'
 
   -- Debugging in Nvim, it can be done!
   use 'mfussenegger/nvim-dap'
