@@ -12,7 +12,7 @@ window:
   opacity: 1.0
   padding:
     x: 10
-    y: 10
+    y: 7
 
   decorations: full
   dynamic_title: true
