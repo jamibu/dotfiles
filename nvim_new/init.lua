@@ -1,4 +1,10 @@
-require("jamibu")
--- disable netrw at the very start of your init.lua (strongly advised)
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
+require("plugins")
+require("keymaps")
+
+-- Leader key -> " "
+--
+-- In general, it's a good idea to set this early in your config, because otherwise
+-- if you have any mappings you set BEFORE doing this, they will be set to the OLD
+-- leader.
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
