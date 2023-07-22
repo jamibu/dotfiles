@@ -1,4 +1,4 @@
-packer_compiled.json
+packer_compiled.lua
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
