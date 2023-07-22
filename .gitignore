@@ -1,4 +1,4 @@
-nvim_new/plugin/
+packer_compiled.json
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
