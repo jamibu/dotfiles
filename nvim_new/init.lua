@@ -1,11 +1,11 @@
-require("plugins")
-require("keymaps")
-require("options")
+local load = function(mod)
+    package.loaded[mod] = nil
+    require(mod)
+end
 
--- Leader key -> " "
---
--- In general, it's a good idea to set this early in your config, because otherwise
--- if you have any mappings you set BEFORE doing this, they will be set to the OLD
--- leader.
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+load('jamibu.settings')
+load('jamibu.commands')
+load('jamibu.keymaps')
+load('jamibu.plugins')
+
+pcall(vim.cmd.colorscheme, 'catppuccin')
