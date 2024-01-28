@@ -20,6 +20,8 @@ Plugin.opts = {
         'css',
         'html',
         'query',
+        'ocaml',
+        'elixir',
     },
     autotag = { enable = true },
     incremental_selection = { enable = true },

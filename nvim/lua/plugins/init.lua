@@ -8,6 +8,7 @@ return {
     { 'windwp/nvim-ts-autotag' },
     { "HiPhish/rainbow-delimiters.nvim" },
     { 'folke/neoconf.nvim',             cmd = 'Neoconf' },
+    { 'norcalli/nvim-colorizer.lua' },
     {
         "NeogitOrg/neogit",
         dependencies = {
@@ -17,4 +18,10 @@ return {
         },
         config = true
     },
+    {
+        "j-hui/fidget.nvim",
+        opts = {
+            -- options
+        },
+    }
 }

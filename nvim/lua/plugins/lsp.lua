@@ -15,18 +15,18 @@ return {
         'hrsh7th/nvim-cmp',
         event = 'InsertEnter',
         dependencies = {
-            {'L3MON4D3/LuaSnip'},
-            {'rafamadriz/friendly-snippets'},
-            {'onsails/lspkind.nvim'},
-            {'hrsh7th/cmp-buffer'},
-            {'hrsh7th/cmp-path'},
-            {'saadparwaiz1/cmp_luasnip'},
+            { 'L3MON4D3/LuaSnip' },
+            { 'rafamadriz/friendly-snippets' },
+            { 'onsails/lspkind.nvim' },
+            { 'hrsh7th/cmp-buffer' },
+            { 'hrsh7th/cmp-path' },
+            { 'saadparwaiz1/cmp_luasnip' },
         },
         config = function()
             -- Here is where you configure the autocompletion settings.
-            -- The arguments for .extend() have the same shape as `manage_nvim_cmp`: 
+            -- The arguments for .extend() have the same shape as `manage_nvim_cmp`:
             -- https://github.com/VonHeikemen/lsp-zero.nvim/blob/v2.x/doc/md/api-reference.md#manage_nvim_cmp
-            vim.opt.completeopt={"menu", "menuone", "noselect"}
+            vim.opt.completeopt = { "menu", "menuone", "noselect" }
             vim.cmd([[highlight! default link CmpItemKind CmpItemMenuDefault]])
             vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
 
@@ -89,11 +89,11 @@ return {
     {
         'neovim/nvim-lspconfig',
         cmd = 'LspInfo',
-        event = {'BufReadPre', 'BufNewFile'},
+        event = { 'BufReadPre', 'BufNewFile' },
         dependencies = {
-            {'hrsh7th/cmp-nvim-lsp'},
-            {'williamboman/mason-lspconfig.nvim'},
-            {'williamboman/mason.nvim'},
+            { 'hrsh7th/cmp-nvim-lsp' },
+            { 'williamboman/mason-lspconfig.nvim' },
+            { 'williamboman/mason.nvim' },
         },
         config = function()
             -- This is where all the LSP shenanigans will live
@@ -119,12 +119,22 @@ return {
             end)
 
             -- (Optional) Configure lua language server for neovim
-            require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
+            local lspconfig = require('lspconfig')
+            lspconfig.lua_ls.setup(lsp.nvim_lua_ls())
+            lspconfig.htmx.setup({ filetypes = { "html", "templ" } })
+            lspconfig.gopls.setup({ filetypes = { "go", "templ" } })
+            lspconfig.tailwindcss.setup({
+                filetypes = { "templ", "javascript", "typescript", "html" },
+                init_options = { userLanguages = { templ = "html" } }
+            })
 
             lsp.setup()
             vim.diagnostic.config({
                 virtual_text = true
             })
         end
+    },
+    {
+        "williamboman/mason.nvim"
     }
 }
