@@ -74,17 +74,17 @@ colors = [
 
 widget_defaults = dict(
     font="Ubuntu Bold",
-    fontsize = 12,
-    padding = 2,
+    fontsize=12,
+    padding=2,
     background=colors[0]
 )
 
 extension_defaults = widget_defaults.copy()
 
 screens = [
-    init_screen_main(),
     init_screen_vert(),
     init_screen(),
+    init_screen_main(),
 ]
 
 # Drag floating layouts.

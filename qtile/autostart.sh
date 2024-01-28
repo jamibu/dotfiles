@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
 picom -b
-autorandr work
+./.screenlayout/screens.sh
 
