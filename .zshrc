@@ -108,8 +108,8 @@ autoload -U compinit; compinit
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
-alias ls='exa'
-alias ll='exa -la --group-directories-first'   # Detailed list with dirs first
+alias ls='eza'
+alias ll='eza -la --group-directories-first'   # Detailed list with dirs first
 
 # Rust
 . "$HOME/.cargo/env"
