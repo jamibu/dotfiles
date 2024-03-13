@@ -143,3 +143,4 @@ eval $(keychain --eval --quiet id_rsa)
 eval "$(zoxide init --cmd cd zsh)"
 
 [[ ! -r /home/jabucher/.opam/opam-init/init.zsh ]] || source /home/jabucher/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+export PATH="$HOME/zig-linux-x86_64-0.11.0:$PATH"
