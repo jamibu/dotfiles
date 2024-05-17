@@ -13,25 +13,4 @@ local Plugin = {
     },
 }
 
-function Plugin.config()
-    local telescope = require('telescope')
-    telescope.setup({
-        extensions = {
-            file_browser = {
-                theme = "ivy",
-            },
-            hijack_netrw = false,
-        }
-    })
-    telescope.load_extension("file_browser")
-
-    vim.api.nvim_set_keymap(
-      "n",
-      "<space>fb",
-      ":Telescope file_browser<CR>",
-      { noremap = true }
-    )
-end
-
-
 return Plugin

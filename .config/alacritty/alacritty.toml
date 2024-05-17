@@ -1,4 +1,7 @@
-import = ["/home/jabucher/.config/alacritty/fonts.toml", "/home/jabucher/.config/alacritty/catppuccin/catppuccin-mocha.toml"]
+import = [
+    "/Users/jabucher/.config/alacritty/fonts.toml",
+    "/Users/jabucher/.config/alacritty/catppuccin/catppuccin-mocha.toml"
+]
 
 [env]
 TERM = "xterm-256color"
@@ -9,5 +12,5 @@ dynamic_title = true
 opacity = 1.0
 
 [window.padding]
-x = 10
-y = 7
+x = 5
+y = 5
