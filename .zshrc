@@ -137,6 +137,7 @@ export NVM_DIR="$HOME/.nvm"
 export NVS_HOME="$HOME/.nvs"
 [ -s "$NVS_HOME/nvs.sh" ] && . "$NVS_HOME/nvs.sh"
 
+export NVIM_APPNAME="kickstart.nvim"
 
 # Keychain for remembering SSH password
 eval $(keychain --eval --quiet id_rsa)
