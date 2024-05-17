@@ -1,6 +1,6 @@
 import = [
-    "/Users/jabucher/.config/alacritty/fonts.toml",
-    "/Users/jabucher/.config/alacritty/catppuccin/catppuccin-mocha.toml"
+    "~/.config/alacritty/fonts.toml",
+    "~/.config/alacritty/catppuccin/catppuccin-mocha.toml"
 ]
 
 [env]
