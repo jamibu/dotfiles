@@ -36,7 +36,7 @@ vim.opt.clipboard = "unnamedplus"
 -- delays and poor user experience.
 vim.opt.updatetime = 50
 
--- For have Racket TS, LSP etc work with CFTool
+-- To make Tree Sitter, LSP etc work with CFTool using racket
 vim.api.nvim_create_autocmd(
     { "BufRead", "BufNewFile" },
     { pattern = { "*.cft" }, command = "setfiletype racket" }

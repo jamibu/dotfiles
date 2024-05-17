@@ -10,7 +10,7 @@
 
 local Plugin = {'nvim-tree/nvim-tree.lua'}
 
-vim.keymap.set('n', '<Leader>nt', '<Cmd>NvimTreeToggle<CR>')
+vim.keymap.set('n', '<Leader>tt', '<Cmd>NvimTreeToggle<CR>')
 
 Plugin.name = 'nvim-tree'
 Plugin.cmd = {'NvimTreeToggle'}
