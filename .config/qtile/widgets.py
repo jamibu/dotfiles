@@ -22,27 +22,33 @@ extension_defaults = widget_defaults.copy()
 class MyVolume(widget.Volume):
     def _configure(self, qtile, bar):
         widget.Volume._configure(self, qtile, bar)
-        self.volume = self.get_volume()
-        if self.volume <= 0:
+        self.volume, self.mute = self.get_volume()
+        if self.mute:
             self.text = '婢'
-        elif self.volume <= 15:
-            self.text = '奄'
-        elif self.volume < 50:
-            self.text = '奔'
         else:
-            self.text = '墳'
+            if self.volume <= 0:
+                self.text = '婢'
+            elif self.volume <= 15:
+                self.text = '奄'
+            elif self.volume < 50:
+                self.text = '奔'
+            else:
+                self.text = '墳'
         self.draw()
         # drawing here crashes Wayland
 
     def _update_drawer(self, wob=False):
-        if self.volume <= 0:
+        if self.mute:
             self.text = '婢'
-        elif self.volume <= 15:
-            self.text = '奄'
-        elif self.volume < 50:
-            self.text = '奔'
         else:
-            self.text = '墳'
+            if self.volume <= 0:
+                self.text = '婢'
+            elif self.volume <= 15:
+                self.text = '奄'
+            elif self.volume < 50:
+                self.text = '奔'
+            else:
+                self.text = '墳'
         self.draw()
 
         if wob:
