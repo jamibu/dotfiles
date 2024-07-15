@@ -129,19 +129,19 @@ export GO_PATH=~/go
 export GOPATH=~/go
 export PATH="$PATH:$(go env GOPATH)/bin"
 
-# Node Version Manager
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-export NVS_HOME="$HOME/.nvs"
-[ -s "$NVS_HOME/nvs.sh" ] && . "$NVS_HOME/nvs.sh"
 
 export NVIM_APPNAME="kickstart.nvim"
 
 # Keychain for remembering SSH password
-eval $(keychain --eval --quiet id_rsa)
+eval $(keychain --eval --quiet id_ed25519)
 eval "$(zoxide init --cmd cd zsh)"
 
 [[ ! -r /home/jabucher/.opam/opam-init/init.zsh ]] || source /home/jabucher/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 export PATH="$HOME/zig-linux-x86_64-0.11.0:$PATH"
+
+# fnm
+FNM_PATH="/home/jack/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="/home/jack/.local/share/fnm:$PATH"
+  eval "`fnm env --use-on-cd`"
+fi
