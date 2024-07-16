@@ -108,11 +108,16 @@ autoload -U compinit; compinit
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
+
+# Use eza for  ls
 alias ls='eza'
 alias ll='eza -la --group-directories-first'   # Detailed list with dirs first
 
-# Rust
-. "$HOME/.cargo/env"
+# Use zoxide for cd
+eval "$(zoxide init --cmd cd zsh)"
+
+# Dir env
+eval "$(direnv hook bash)"
 
 # Python env stuff
 export PYENV_ROOT=~/.pyenv
@@ -120,24 +125,25 @@ export PATH="~/.pyenv/bin:${PATH}"
 export PIP_REQUIRE_VIRTUALENV=false
 export WORKON_HOME=~/dev/python_env
 export VIRTUALENVWRAPPER_PYTHON=~/.pyenv/shims/python
-eval "$(direnv hook bash)"
 eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
-pyenv virtualenvwrapper_lazy
 
-export GO_PATH=~/go
-export GOPATH=~/go
-export PATH="$PATH:$(go env GOPATH)/bin"
-
-
+# NVIM config to use
 export NVIM_APPNAME="kickstart.nvim"
 
 # Keychain for remembering SSH password
 eval $(keychain --eval --quiet id_ed25519)
-eval "$(zoxide init --cmd cd zsh)"
 
-[[ ! -r /home/jabucher/.opam/opam-init/init.zsh ]] || source /home/jabucher/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+# Go
+export GO_PATH=~/go
+export GOPATH=~/go
+export PATH="$PATH:$(go env GOPATH)/bin"
+
+# Zig
 export PATH="$HOME/zig-linux-x86_64-0.11.0:$PATH"
+
+# Rust
+. "$HOME/.cargo/env"
 
 # fnm
 FNM_PATH="/home/jack/.local/share/fnm"
@@ -145,3 +151,6 @@ if [ -d "$FNM_PATH" ]; then
   export PATH="/home/jack/.local/share/fnm:$PATH"
   eval "`fnm env --use-on-cd`"
 fi
+
+# Ahoy completions
+complete -F "ahoy --generate-bash-completion" ahoy
