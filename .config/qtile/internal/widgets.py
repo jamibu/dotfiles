@@ -48,5 +48,5 @@ volume = MyVolume(
     fontsize=14,
     font='JetBrainsMono Nerd Font',
     foreground="#da8548",
-    mouse_callbacks = {'Button1': lambda: qtile.spawn("pavucontrol")}
+    mouse_callbacks = {'Button1': lambda: qtile.spawn("pavucontrol")},
 )
