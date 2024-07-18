@@ -1,7 +1,9 @@
 [global]
 # Catppuccin colours
 frame_color = "#89b4fa"
+frame_width = 2
 separator_color = frame
+
 monitor = 0
 follow = keyboard
 origin = top-right
@@ -18,7 +20,6 @@ ignore_newline = false
 stack_duplicates = true
 hide_duplicate_count = true
 show_indicators = true
-dmenu = /usr/bin/rofi -dmenu
 
 [urgency_low]
 # Catppuccin colours
