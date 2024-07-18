@@ -1,3 +1,5 @@
+import os
+
 from libqtile import bar, widget, qtile
 from internal.widgets import volume
 
@@ -14,7 +16,7 @@ def group_box(groups: list[str]) -> widget.GroupBox:
 
 
 def power():
-    qtile.cmd_spawn("sh -c ~/.config/rofi/powermenu/powermenu")
+    qtile.spawn("sh -c ~/.config/rofi/powermenu/powermenu")
 
 
 def init_bar_main(): 
@@ -31,15 +33,21 @@ def init_bar_main():
             widget.Spacer(),
             widget.Clock(format="%Y-%m-%d %a %I:%M %p"),
             widget.Spacer(),
+            volume,
+            widget.Spacer(length=5),
             widget.StatusNotifier(),
             widget.Systray(),
-            volume,
+            widget.Spacer(length=10),
+            widget.Pomodoro(
+                warkup=True,
+                font="JetBrainsMono Nerd Font Bold",
+                fontsize=12,
+            ),
             widget.Spacer(length=10),
             widget.CurrentLayoutIcon(scale=0.75),
         ],
         25,
         opacity=0.8,
-        background="#DC8A78",
     )
 def init_bar(): 
     return bar.Bar(
@@ -53,7 +61,11 @@ def init_bar():
             widget.Sep(),
             group_box(["6", "7", "8", "9", "0"]),
             widget.Spacer(),
-            widget.Clock(format="%Y-%m-%d %a %I:%M %p"),
+            widget.OpenWeather(
+                api_key=os.environ.get("OPENWEATHER_APIKEY"),
+                location="Reservoir,AU",
+                format="{location_city} {main_temp}°{units_temperature} {icon}",
+            ),
             widget.Spacer(),
             widget.CurrentLayoutIcon(scale=0.75),
         ],
