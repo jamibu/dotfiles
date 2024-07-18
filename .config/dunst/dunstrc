@@ -1,0 +1,37 @@
+[global]
+# Catppuccin colours
+frame_color = "#89b4fa"
+separator_color = frame
+monitor = 0
+follow = keyboard
+origin = top-right
+corner_radius = 12
+font = JetBrainsMono Nerd Font
+markup = full
+format = "<b>%a</b>\n%s\n%b"
+alignment = left
+vertical_alignment = center
+show_age_threshold = 60
+word_wrap = true
+ellipsize = middle
+ignore_newline = false
+stack_duplicates = true
+hide_duplicate_count = true
+show_indicators = true
+dmenu = /usr/bin/rofi -dmenu
+
+[urgency_low]
+# Catppuccin colours
+background = "#1e1e2e"
+foreground = "#cdd6f4"
+
+[urgency_normal]
+# Catppuccin colours
+background = "#1e1e2e"
+foreground = "#cdd6f4"
+
+[urgency_critical]
+# Catppuccin colours
+background = "#1e1e2e"
+foreground = "#cdd6f4"
+frame_color = "#fab387"
