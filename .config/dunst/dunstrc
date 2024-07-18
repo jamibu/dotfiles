@@ -6,20 +6,31 @@ separator_color = frame
 
 monitor = 0
 follow = keyboard
+
 origin = top-right
 corner_radius = 12
-font = JetBrainsMono Nerd Font
+font = JetBrainsMono Nerd Font 10
 markup = full
 format = "<b>%a</b>\n%s\n%b"
 alignment = left
 vertical_alignment = center
+
 show_age_threshold = 60
+idle_threshold = 120
+
 word_wrap = true
 ellipsize = middle
 ignore_newline = false
 stack_duplicates = true
 hide_duplicate_count = true
 show_indicators = true
+
+transparency = 0
+sort = yes
+
+sticky_history = yes
+history_length = 20
+
 
 [urgency_low]
 # Catppuccin colours
