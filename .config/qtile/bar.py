@@ -62,7 +62,6 @@ def init_bar():
             ),
             widget.Spacer(),
             widget.Pomodoro(
-                warkup=True,
                 font="JetBrainsMono Nerd Font Bold",
                 fontsize=12,
             ),
