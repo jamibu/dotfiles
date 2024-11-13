@@ -12,6 +12,7 @@ def group_box(groups: list[str]) -> widget.GroupBox:
         other_current_screen_border=None,
         other_screen_border=None,
         font="Noto Sans JP ExtraBold",
+        disable_drag=True
     )
 
 
@@ -33,9 +34,14 @@ def init_bar_main():
             widget.Spacer(),
             widget.Clock(format="%Y-%m-%d %a %I:%M %p"),
             widget.Spacer(),
+            widget.Chord(
+                chords_colors={
+                    "launch": ("#ff0000", "#ffffff"),
+                },
+                name_transform=lambda name: name.upper(),
+            ),
             volume,
             widget.Spacer(length=5),
-            widget.StatusNotifier(),
             widget.Systray(),
             widget.Spacer(length=5),
             widget.CurrentLayoutIcon(scale=0.75),
