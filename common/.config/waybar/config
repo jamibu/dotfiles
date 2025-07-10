@@ -105,6 +105,8 @@
         "format-wifi": "{icon}",
         "format-icons": ["󰤟","󰤢","󰤥","󰤨"],
         "format-alt": "{essid} ({signalStrength}%) {icon}",
+        "format-alt-click": "click-right",
+        "on-click": "iwgtk",
         "format-ethernet": "{ipaddr}/{cidr} 󰈁",
         "format-disconnected": "󰤭", //An empty format will hide the module.
         "tooltip-format": "{ifname} via {gwaddr} 󰊗",
@@ -118,7 +120,6 @@
         "interval": 3600,                     // every hour
         "exec": "checkupdates | wc -l",       // # of updates
         "exec-if": "exit 0",                  // always run; consider advanced run conditions
-        "on-click": "alacritty -e 'sudo pacman -Syu'; pkill -SIGRTMIN+8 waybar", // update system
         "signal": 8
     },
     "custom/weather": {
