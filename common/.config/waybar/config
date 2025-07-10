@@ -10,6 +10,7 @@
         "clock",
     ],
     "modules-right": [
+        "tray",
         "custom/pacman",
         "custom/separator#line",
         "cpu",
@@ -17,7 +18,6 @@
         "custom/separator#line",
         "network",
         "pulseaudio",
-        "tray",
         "custom/separator#line",
         "idle_inhibitor",
     ],
@@ -26,8 +26,8 @@
 		"format-icons": {
 			"1": "",
 			"2": "",
-			"3": "󰆍",
-			"4": "四",
+			"3": "",
+			"4": "󰆍",
 			"5": "",
 			"6": "",
 			"7": "",
