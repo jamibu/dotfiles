@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 screenshotFolder="$HOME/Pictures/screenshots"
 
 case $1 in
