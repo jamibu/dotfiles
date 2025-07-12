@@ -17,4 +17,6 @@ esac
 
 if [ -e $screenshotFolder/$filename ]; then
     notify-send -i "$screenshotFolder/$filename" "Screenshot Saved" "$filename"
+else
+    notify-send "Screenshot Failed"
 fi
