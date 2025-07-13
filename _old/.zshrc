@@ -1,13 +1,11 @@
-# zmodload zsh/zprof
-############################### OH-MY-ZSH STUFF ###############################
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# Path to your Oh My Zsh installation.
+# Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
-# load a random theme each time Oh My Zsh is loaded, in which case,
+# load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
@@ -72,16 +70,18 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-
-# NVM
-export NVM_LAZY_LOAD=true
-export NVM_LAZY_LOAD_EXTRA_COMMANDS=('nvim')
-
-plugins=(git zsh-nvm)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-################################## MY CONFIG ##################################
+autoload -U compinit; compinit
+
+# Download Znap, if it's not there yet.
+# [[ -r ~/Repos/znap/znap.zsh ]] ||
+#     git clone --depth 1 -- \
+#         https://github.com/marlonrichert/zsh-snap.git ~/Repos/znap
+# source ~/Repos/znap/znap.zsh  # Start Znap
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -93,66 +93,64 @@ source $ZSH/oh-my-zsh.sh
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
 # else
-#   export EDITOR='nvim'
+#   export EDITOR='mvim'
 # fi
 
 # Compilation flags
-# export ARCHFLAGS="-arch $(uname -m)"
+# export ARCHFLAGS="-arch x86_64"
 
-# Set personal aliases, overriding those provided by Oh My Zsh libs,
-# plugins, and themes. Aliases can be placed here, though Oh My Zsh
-# users are encouraged to define aliases within a top-level file in
-# the $ZSH_CUSTOM folder, with .zsh extension. Examples:
-# - $ZSH_CUSTOM/aliases.zsh
-# - $ZSH_CUSTOM/macos.zsh
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
-autoload -Uz compinit
-if [ "$(date +'%j')" != "$(stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null)" ]; then
-    compinit
-else
-    compinit -C
-fi
 
 # Use eza for  ls
 alias ls='eza'
 alias ll='eza -la --group-directories-first'   # Detailed list with dirs first
 
-alias vim='nvim'
-alias docker-compose='docker compose'
+# Use zoxide for cd
+eval "$(zoxide init --cmd cd zsh)"
 
-# NVIM config to use
-export NVIM_APPNAME="kickstart.nvim"
+# Dir env
+eval "$(direnv hook bash)"
 
-# Created by `pipx` on 2025-07-10 12:19:48
-export PATH="$PATH:/home/jack/.local/bin"
-
-# Python dev environment
+# Python env stuff
 export PYENV_ROOT=~/.pyenv
 export PATH="~/.pyenv/bin:${PATH}"
 export PIP_REQUIRE_VIRTUALENV=false
 export WORKON_HOME=~/dev/python_env
 export VIRTUALENVWRAPPER_PYTHON=~/.pyenv/shims/python
+eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
 
-# This seems to be from UV
-. "$HOME/.local/share/../bin/env"
+# NVIM config to use
+export NVIM_APPNAME="kickstart.nvim"
+
+# Keychain for remembering SSH password
+eval $(keychain --eval --quiet id_ed25519)
+
+# Go
+export GO_PATH=~/go
+export GOPATH=~/go
+export PATH="$PATH:$(go env GOPATH)/bin"
+
+# Zig
+export PATH="$HOME/zig-linux-x86_64-0.11.0:$PATH"
+
+# Rust
+. "$HOME/.cargo/env"
 
 # fnm
 FNM_PATH="/home/jack/.local/share/fnm"
 if [ -d "$FNM_PATH" ]; then
   export PATH="/home/jack/.local/share/fnm:$PATH"
-  eval "`fnm env`"
+  eval "`fnm env --use-on-cd`"
 fi
 
-# Keychain for remembering SSH password
-eval $(keychain --eval --quiet id_ed25519)
-
-# Prompt
-eval "$(starship init zsh)"
-
-# zprof
+# Ahoy completions
+complete -F "ahoy --generate-bash-completion" ahoy
