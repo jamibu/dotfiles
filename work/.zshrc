@@ -111,19 +111,22 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
+# Use eza for  ls
+alias ls='eza'
+alias ll='eza -la --group-directories-first'   # Detailed list with dirs first
+
+alias vim='nvim'
+alias 'docker compose'='docker-compose'
+alias tn='tmux new -s'
+alias tn='tmux attach-session'
+alias tl='tmux list-sessions'
+
 autoload -Uz compinit
 if [ "$(date +'%j')" != "$(stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null)" ]; then
     compinit
 else
     compinit -C
 fi
-
-# Use eza for  ls
-alias ls='eza'
-alias ll='eza -la --group-directories-first'   # Detailed list with dirs first
-
-alias vim='nvim'
-alias docker-compose='docker compose'
 
 # NVIM config to use
 export NVIM_APPNAME="kickstart.nvim"
@@ -156,3 +159,6 @@ eval $(keychain --eval --quiet id_ed25519)
 eval "$(starship init zsh)"
 
 # zprof
+
+# opencode
+export PATH=/home/jack/.opencode/bin:$PATH
