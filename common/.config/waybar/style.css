@@ -38,10 +38,11 @@ window#waybar.empty #window {
     color: rgba(217, 216, 216, 0.4);
     box-shadow: none;
 	text-shadow: none;
-    padding: 0px;
+    padding: 1px;
     border-radius: 9px;
-    padding-left: 4px;
-    padding-right: 4px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin: 1px;
 }
 
 #workspaces button.visible {
@@ -66,11 +67,13 @@ window#waybar.empty #window {
 
 #custom-weather,
 #clock,
+#custom-spotify,
 #custom-pacman,
 #cpu,
 #memory,
+#custom-storage
 #network,
-#pulseaudio,
+#wireplumber,
 #idle_inhibitor,
 #tray {
 	padding-top: 4px;
