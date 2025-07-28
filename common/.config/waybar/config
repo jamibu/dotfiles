@@ -50,6 +50,7 @@
     "image": {
         "path": "/home/jack/.config/waybar/logo.svg",
         "size": 30,
+        "on-click": "fuzzel",
     },
     "clock": {
         "format": "󰥔 {:%H:%M}",
