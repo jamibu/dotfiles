@@ -55,6 +55,7 @@
     "clock": {
         "format": "󰥔 {:%H:%M}",
         "format-alt": " {:%a %d %b 󰥔 %H:%M}",
+        "format-alt-click": "click-right",
         "tooltip-format": " {:%a %d %b 󰥔 %H:%M:%S}"
     },
     "battery": {
