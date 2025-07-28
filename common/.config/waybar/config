@@ -10,7 +10,6 @@
         "custom/separator#dot-line",
         "clock",
         "custom/weather",
-        "custom/spotify",
     ],
     "modules-center": [
         "hyprland/workspaces"
