@@ -47,8 +47,8 @@
         "tooltip": false
     },
     "image": {
-        "path": "~/.config/waybar/logo.svg",
-        "size": 32,
+        "path": "/home/jack/.config/waybar/logo.svg",
+        "size": 30,
     },
     "clock": {
         "format": "󰥔 {:%H:%M}",
@@ -108,7 +108,7 @@
     },
     "tray": {
         "icon-size": 18,
-        "spacing": 8
+        "spacing": 10
     },
     "memory": {
         "interval": 30,
