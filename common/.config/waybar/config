@@ -3,9 +3,10 @@
     "position": "top",
     "height": 30,
 
-    "spacing": 5,
+    "spacing": 2,
 
     "modules-left": [
+        "image",
         "hyprland/workspaces"
     ],
     "modules-center": [
@@ -16,15 +17,14 @@
     "modules-right": [
         "tray",
         "custom/pacman",
-        "custom/separator#line",
-        "custom/storage",
-        "memory",
+        "custom/separator#dot-line",
         "cpu",
-        "custom/separator#line",
+        "memory",
+        "custom/storage",
+        "custom/separator#dot-line",
         "network",
         "wireplumber",
-        "custom/separator#line",
-        "idle_inhibitor",
+        "custom/wlogout",
     ],
     "hyprland/workspaces": {
         "format": "{icon}",
@@ -45,6 +45,10 @@
     "hyprland/window": {
         "max-length": 80,
         "tooltip": false
+    },
+    "image": {
+        "path": "~/.config/waybar/logo.svg",
+        "size": 32,
     },
     "clock": {
         "format": "󰥔 {:%H:%M}",
@@ -91,6 +95,8 @@
             "car": " ",
             "default": [" ", " ", " "]
         },
+        "min-length": 7,
+        "max-length": 7,
     },
     "idle_inhibitor": {
         "format": "{icon}",
@@ -102,20 +108,23 @@
     },
     "tray": {
         "icon-size": 18,
-		"spacing": 16
+        "spacing": 8
     },
     "memory": {
         "interval": 30,
         "format": " {}%",
-        "format-alt": " {used:0.2f}/{total:0.0f} GB",
+        "format-alt": " {used:0.2f}/{total:0.0f}GB",
         "format-alt-click": "click-right",
-        "on-click": "alacritty -e btop"
+        "on-click": "alacritty -e btop",
+        "min-length": 6,
     },
     "cpu": {
-        "interval": 1,
-        "format": " {usage}%", // Icon: microchip
+        "interval": 30,
+        "format": " {usage}%",
         "format-alt": " {max_frequency}GHz<span color=\"darkgray\">|{usage}%</span>",
         "format-alt-click": "click-right",
+        "min-length": 5,
+        "expand": false,
     },
     "network": {
         "format-wifi": "  {signalStrength}%",
@@ -124,19 +133,22 @@
         "format": "",
         "format-disconnected": "",
         "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "format-alt-click": "click-right",
         "on-click": "wl-copy $(ip address show up scope global | grep inet | head -n1 | cut -d/ -f 1 | tr -d [:space:] | cut -c5-)",
         "on-click-right": "wl-copy $(ip address show up scope global | grep inet6 | head -n1 | cut -d/ -f 1 | tr -d [:space:] | cut -c6-)",
         "tooltip-format": " {bandwidthUpBits}  {bandwidthDownBits}\n{ifname}\n{ipaddr}/{cidr}\n",
         "tooltip-format-wifi": "  {essid} {frequency}MHz\nStrength: {signaldBm}dBm ({signalStrength}%)\nIP: {ipaddr}/{cidr}\n {bandwidthUpBits}  {bandwidthDownBits}",
-        "interval": 10
+        "interval": 10,
+        "min-length": 7,
+        "max-length": 7,
     },
     "custom/storage": {
-        "format": " {}",
-        "format-alt": "{percentage}% ",
+        "format": " {percentage}%",
+        "format-alt": " {}",
         "format-alt-click": "click-right",
         "return-type": "json",
         "interval": 60,
-        "exec": "~/.config/waybar/scripts/storage.sh"
+        "exec": "~/.config/waybar/scripts/storage.sh",
     },
     "custom/pacman": {
         "format": "{} ",
@@ -159,6 +171,10 @@
         "on-click": "playerctl play-pause",
         "on-scroll-up": "playerctl next",
         "on-scroll-down": "playerctl previous"
+    },
+    "custom/wlogout": {
+        "format": "",
+        "on-click": "wlogout",
     },
     "custom/separator#dot": {
         "format": "",
