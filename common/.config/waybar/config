@@ -8,8 +8,9 @@
     "modules-left": [
         "image",
         "custom/separator#dot-line",
-        "clock",
         "custom/weather",
+        "custom/separator#dot-line",
+        "clock",
     ],
     "modules-center": [
         "hyprland/workspaces"
