@@ -6,7 +6,7 @@
     "spacing": 2,
 
     "modules-left": [
-        "image",
+        "image#orygen",
         "custom/separator#dot-line",
         "custom/weather",
         "custom/separator#dot-line",
@@ -47,9 +47,14 @@
         "max-length": 80,
         "tooltip": false
     },
-    "image": {
-        "path": "/home/jack/.config/waybar/logo.svg",
+    "image#orygen": {
+        "path": "/home/jack/.config/waybar/orygen-logo.svg",
         "size": 30,
+        "on-click": "fuzzel",
+    },
+    "image#dog": {
+        "path": "/home/jack/.config/waybar/dog.svg",
+        "size": 24,
         "on-click": "fuzzel",
     },
     "clock": {
