@@ -6,7 +6,7 @@
     "spacing": 2,
 
     "modules-left": [
-        "image#orygen",
+        "image#dog",
         "custom/separator#dot-line",
         "custom/weather",
         "custom/separator#dot-line",
@@ -25,7 +25,6 @@
         "custom/separator#dot-line",
         "network",
         "wireplumber",
-        "custom/wlogout",
     ],
     "hyprland/workspaces": {
         "format": "{icon}",
@@ -50,12 +49,12 @@
     "image#orygen": {
         "path": "/home/jack/.config/waybar/orygen-logo.svg",
         "size": 30,
-        "on-click": "fuzzel",
+        "on-click": "wlogout",
     },
     "image#dog": {
-        "path": "/home/jack/.config/waybar/dog.svg",
+        "path": "/home/jackb/.config/waybar/dog.svg",
         "size": 24,
-        "on-click": "fuzzel",
+        "on-click": "wlogout",
     },
     "clock": {
         "format": "󰥔 {:%H:%M}",
