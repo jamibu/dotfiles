@@ -158,7 +158,18 @@ eval $(keychain --eval --quiet id_ed25519)
 # Prompt
 eval "$(starship init zsh)"
 
-# zprof
+# Go Installs
+export PATH=$HOME/go/bin:$PATH
 
 # opencode
 export PATH=/home/jack/.opencode/bin:$PATH
+
+# zprof
+
+# pnpm
+export PNPM_HOME="/home/jack/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
