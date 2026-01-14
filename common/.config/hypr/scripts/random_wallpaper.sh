@@ -1,9 +1,12 @@
 #!/usr/bin/env bash
 WALLPAPER_LIST="$HOME/.config/hypr/scripts/wallpaper"
-CURRENT_WALL=$(hyprctl hyprpaper listloaded)
 
-# Get a random wallpaper that is not the current one
-WALLPAPER=$(cat "$WALLPAPER_LIST" | grep -wv "$CURRENT_WALL" | shuf -n 1)
+# Just get a random wallpaper
+WALLPAPER=$(cat "$WALLPAPER_LIST" | shuf -n 1)
 
-# Apply the selected wallpaper
-hyprctl hyprpaper reload ,"$WALLPAPER"
+# Preload and set the wallpaper
+hyprctl hyprpaper preload "$WALLPAPER"
+hyprctl hyprpaper wallpaper ",$WALLPAPER"
+
+# Optional: unload all unused wallpapers
+hyprctl hyprpaper unload unused
