@@ -3,10 +3,6 @@ vim.pack.add({ 'https://github.com/nvim-mini/mini.nvim' })
 -- Icons — used by mini.pick, mini.statusline, and others. Install first.
 require('mini.icons').setup()
 
--- Colorscheme — mini.nvim ships a few (built on mini.hues). Optional if you
--- already have one you like; this is just an easy default to start from.
-vim.cmd.colorscheme('miniwinter')
-
 -- Statusline
 require('mini.statusline').setup()
 

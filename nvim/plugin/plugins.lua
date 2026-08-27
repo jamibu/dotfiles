@@ -10,6 +10,8 @@ vim.pack.add({
   "https://github.com/nvim-treesitter/nvim-treesitter",
   "https://github.com/lewis6991/gitsigns.nvim",
   "https://github.com/NeogitOrg/neogit",
+  "https://github.com/folke/tokyonight.nvim",
+  "https://github.com/rose-pine/neovim",
 })
 
 require('gitsigns').setup({
@@ -26,3 +28,6 @@ require('gitsigns').setup({
   },
   current_line_blame_formatter = '<author>, <author_time:%R> - <summary>',
 })
+
+vim.cmd.colorscheme('rose-pine')
+
