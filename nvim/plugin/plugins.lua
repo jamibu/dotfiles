@@ -35,9 +35,12 @@ require('gitsigns').setup({
 })
 
 -- Harpoon
-require('harpoon'):setup() -- required, wires up autocmds
+require('harpoon').setup() -- required, wires up autocmds
 
 vim.cmd.colorscheme('rose-pine')
 
 -- Trouble
-require('trouble'):setup()
+require('trouble').setup()
+
+
+
