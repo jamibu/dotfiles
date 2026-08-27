@@ -10,8 +10,8 @@ vim.pack.add({
   "https://github.com/nvim-treesitter/nvim-treesitter",
   "https://github.com/lewis6991/gitsigns.nvim",
   "https://github.com/NeogitOrg/neogit",
-  "https://github.com/folke/tokyonight.nvim",
   "https://github.com/rose-pine/neovim",
+  -- "https://github.com/folke/tokyonight.nvim",
 })
 
 require('gitsigns').setup({
