@@ -113,6 +113,6 @@ vim.api.nvim_create_autocmd('FileType', {
 vim.diagnostic.config({
   signs = { severity = { min = 'WARN', max = 'ERROR' } },
   underline = { severity = { min = 'HINT', max = 'ERROR' } },
-  virtual_text = { current_line = true, severity = { min = 'ERROR', max = 'ERROR' } },
+  virtual_text = { current_line = true, severity = { min = 'HINT', max = 'ERROR' } },
   update_in_insert = false,
 })
