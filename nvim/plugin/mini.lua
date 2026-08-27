@@ -17,7 +17,26 @@ require('mini.diff').setup({
 require('mini.git').setup()
 
 require('mini.notify').setup()
-require('mini.clue').setup()
+
+-- Clue
+local miniclue = require('mini.clue')
+miniclue.setup({
+  triggers = {
+    { mode = { 'n', 'x' }, keys = '<Leader>' },
+  },
+
+  clues = {
+    -- Group labels shown before you've typed the second key
+    { mode = 'n', keys = '<Leader>f', desc = '+Find' },     -- ff, fg, fb
+    { mode = 'n', keys = '<Leader>g', desc = '+Git' },      -- gg, gb, gl
+    { mode = 'n', keys = '<Leader>h', desc = '+Harpoon' },  -- ha, he
+    { mode = 'n', keys = '<Leader>t', desc = '+Toggle' },   -- tb
+  },
+
+  window = {
+    delay = 300, -- ms before popup shows; default is 1000 if omitted
+  },
+})
 
 -- Completion — pairs with the complete/completeopt/completetimeout you
 -- already set in options.lua
