@@ -21,3 +21,13 @@ nmap_leader(
     function() require('gitsigns').toggle_current_line_blame() end,
     'Toggle line blame'
 )
+
+-- Harpoon
+nmap_leader('ha', function() require('harpoon'):list():add() end, 'Harpoon add file')
+nmap_leader('he', function() require('harpoon').ui:toggle_quick_menu(require('harpoon'):list()) end, 'Harpoon quick menu')
+
+nmap_leader('1', function() require('harpoon'):list():select(1) end, 'Harpoon file 1')
+nmap_leader('2', function() require('harpoon'):list():select(2) end, 'Harpoon file 2')
+nmap_leader('3', function() require('harpoon'):list():select(3) end, 'Harpoon file 3')
+nmap_leader('4', function() require('harpoon'):list():select(4) end, 'Harpoon file 4')
+

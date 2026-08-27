@@ -17,6 +17,7 @@ require('mini.diff').setup({
 require('mini.git').setup()
 
 require('mini.notify').setup()
+require('mini.clue').setup()
 
 -- Completion — pairs with the complete/completeopt/completetimeout you
 -- already set in options.lua
