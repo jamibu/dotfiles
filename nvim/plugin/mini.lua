@@ -10,7 +10,7 @@ require('mini.statusline').setup()
 require('mini.pick').setup()
 require('mini.starter').setup()
 require('mini.sessions').setup()
-require('mini.files').setup()
+require('mini.files').setup({ windows = { preview = true } })
 require('mini.diff').setup({
   view = { style = 'number' },
 })
@@ -27,10 +27,12 @@ miniclue.setup({
 
   clues = {
     -- Group labels shown before you've typed the second key
-    { mode = 'n', keys = '<Leader>f', desc = '+Find' },     -- ff, fg, fb
-    { mode = 'n', keys = '<Leader>g', desc = '+Git' },      -- gg, gb, gl
-    { mode = 'n', keys = '<Leader>h', desc = '+Harpoon' },  -- ha, he
-    { mode = 'n', keys = '<Leader>t', desc = '+Toggle' },   -- tb
+    { mode = 'n', keys = '<Leader>f', desc = 'Find' },
+    { mode = 'n', keys = '<Leader>g', desc = 'Git' },
+    { mode = 'n', keys = '<Leader>h', desc = 'Harpoon' },
+    { mode = 'n', keys = '<Leader>t', desc = 'Toggle' },
+    { mode = 'n', keys = '<Leader>e', desc = 'Files' },
+    { mode = 'n', keys = '<Leader>l', desc = 'LSP' },
   },
 
   window = {
@@ -56,3 +58,4 @@ require('mini.ai').setup()
 -- Autopairs
 require('mini.pairs').setup()
 require('mini.tabline').setup()
+
