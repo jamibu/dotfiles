@@ -19,7 +19,7 @@ require('gitsigns').setup({
   word_diff = false,
   signs = { add = {}, change = {}, delete = {}, topdelete = {}, changedelete = {} },
 
-  current_line_blame = true,  -- always-on, updates as cursor moves
+  current_line_blame = false,  -- always-on, updates as cursor moves
   current_line_blame_opts = {
     delay = 300,
     virt_text_pos = 'eol',
