@@ -27,12 +27,14 @@ miniclue.setup({
 
   clues = {
     -- Group labels shown before you've typed the second key
+    { mode = 'n', keys = '<Leader>c', desc = 'Trouble (LSP)' },
+    { mode = 'n', keys = '<Leader>e', desc = 'Files' },
     { mode = 'n', keys = '<Leader>f', desc = 'Find' },
     { mode = 'n', keys = '<Leader>g', desc = 'Git' },
     { mode = 'n', keys = '<Leader>h', desc = 'Harpoon' },
-    { mode = 'n', keys = '<Leader>t', desc = 'Toggle' },
-    { mode = 'n', keys = '<Leader>e', desc = 'Files' },
     { mode = 'n', keys = '<Leader>l', desc = 'LSP' },
+    { mode = 'n', keys = '<Leader>t', desc = 'Toggle' },
+    { mode = 'n', keys = '<Leader>x', desc = 'Trouble' },
   },
 
   window = {
