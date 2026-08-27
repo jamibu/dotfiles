@@ -70,3 +70,11 @@ nmap_leader('lr', '<Cmd>lua vim.lsp.buf.rename()<CR>',          'Rename')
 nmap_leader('lR', '<Cmd>lua vim.lsp.buf.references()<CR>',      'References')
 nmap_leader('ls', '<Cmd>lua vim.lsp.buf.definition()<CR>',      'Source definition')
 nmap_leader('lt', '<Cmd>lua vim.lsp.buf.type_definition()<CR>', 'Type definition')
+
+-- Trouble
+    nmap_leader('xx', "<cmd>Trouble diagnostics toggle<cr>", "Diagnostics (Trouble)")
+nmap_leader("xX", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", "Buffer Diagnostics (Trouble)")
+nmap_leader("cs", "<cmd>Trouble symbols toggle focus=false<cr>", "Symbols (Trouble)")
+nmap_leader("cl", "<cmd>Trouble lsp toggle focus=false win.position=right<cr>", "LSP Definitions / references / ... (Trouble)")
+nmap_leader("xL", "<cmd>Trouble loclist toggle<cr>", "Location List (Trouble)")
+nmap_leader("xQ", "<cmd>Trouble qflist toggle<cr>", "Quickfix List (Trouble)")

@@ -13,6 +13,7 @@ vim.pack.add({
   "https://github.com/ThePrimeagen/refactoring.nvim",
   "https://github.com/rose-pine/neovim",
   'https://github.com/nvim-lua/plenary.nvim',
+  'https://github.com/folke/trouble.nvim',
   { src = 'https://github.com/ThePrimeagen/harpoon', version = 'harpoon2' },
   -- "https://github.com/folke/tokyonight.nvim",
 })
@@ -34,8 +35,9 @@ require('gitsigns').setup({
 })
 
 -- Harpoon
-local harpoon = require('harpoon')
-harpoon:setup() -- required, wires up autocmds
+require('harpoon'):setup() -- required, wires up autocmds
 
 vim.cmd.colorscheme('rose-pine')
 
+-- Trouble
+require('trouble'):setup()
