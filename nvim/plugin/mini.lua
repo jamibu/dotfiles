@@ -14,15 +14,20 @@ require('mini.statusline').setup()
 require('mini.pick').setup()
 require('mini.starter').setup()
 require('mini.sessions').setup()
+require('mini.files').setup()
+require('mini.diff').setup({
+  view = { style = 'number' },
+})
+require('mini.git').setup()
 
 require('mini.notify').setup()
 
 -- Completion — pairs with the complete/completeopt/completetimeout you
 -- already set in options.lua
-require('mini.completion').setup()
+-- require('mini.completion').setup()
 
 -- Advertise completion capabilities to LSP servers (from our earlier LSP chat)
-vim.lsp.config('*', { capabilities = require('mini.completion').get_lsp_capabilities() })
+-- vim.lsp.config('*', { capabilities = require('mini.completion').get_lsp_capabilities() })
 
 require('mini.cmdline').setup()
 
@@ -34,3 +39,4 @@ require('mini.ai').setup()
 
 -- Autopairs
 require('mini.pairs').setup()
+require('mini.tabline').setup()
