@@ -3,6 +3,11 @@ local nmap = function(lhs, rhs, desc)
   vim.keymap.set('n', lhs, rhs, { desc = desc })
 end
 
+-- Helper for setting normal mode keympaps with leader
+--
+-- suffix: Keys after leader
+-- rhs: Command to run
+-- desc: Description, used with mini-clue
 local nmap_leader = function(suffix, rhs, desc)
   vim.keymap.set('n', '<Leader>' .. suffix, rhs, { desc = desc })
 end
