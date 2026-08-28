@@ -1,7 +1,17 @@
-vim.pack.add({ "https://github.com/neovim/nvim-lspconfig" })
+vim.pack.add({
+  "https://github.com/neovim/nvim-lspconfig",
+  "https://github.com/mason-org/mason.nvim",
+})
 
-vim.lsp.enable({ "lua_ls", "gopls", "rust_analyzer" })
+vim.lsp.enable({
+  "lua_ls",
+  "gopls",
+  "rust_analyzer",
+  "ols",
+  "ruff",
+  "ty",
+  "prettier",
+  "eslint",
+})
 
--- plugin/40-plugins.lua, alongside your nvim-lspconfig block
-vim.pack.add({ 'https://github.com/mason-org/mason.nvim' })
 require('mason').setup()
