@@ -13,7 +13,7 @@ local nmap_leader = function(suffix, rhs, desc)
 end
 
 -- Other
-nmap_leader('<Esc>', '<cmd>nohlsearch<CR>')
+nmap('<Esc>', '<cmd>nohlsearch<CR>', 'Clear highlights')
 
 -- Picker
 nmap_leader('ff', '<Cmd>Pick files<CR>', 'Files')
