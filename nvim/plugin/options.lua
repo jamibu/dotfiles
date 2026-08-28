@@ -30,24 +30,24 @@ vim.o.showmode = false
 vim.schedule(function() vim.o.clipboard = 'unnamedplus' end)
 
 -- Enable undo/redo changes even after closing and reopening a file
-vim.o.undofile = true
+vim.o.undofile        = true
 
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
-vim.o.ignorecase = true
-vim.o.smartcase = true
+vim.o.ignorecase      = true
+vim.o.smartcase       = true
 
 -- Keep signcolumn on by default
-vim.o.signcolumn = 'yes'
+vim.o.signcolumn      = 'yes'
 
 -- Decrease update time
-vim.o.updatetime = 250
+vim.o.updatetime      = 250
 
 -- Decrease mapped sequence wait time
-vim.o.timeoutlen = 300
+vim.o.timeoutlen      = 300
 
 -- Configure how new splits should be opened
-vim.o.splitright = true
-vim.o.splitbelow = true
+vim.o.splitright      = true
+vim.o.splitbelow      = true
 
 -- Sets how neovim will display certain whitespace characters in the editor.
 --  See `:help 'list'`
@@ -57,46 +57,46 @@ vim.o.splitbelow = true
 --  It is very similar to `vim.o` but offers an interface for conveniently interacting with tables.
 --   See `:help lua-options`
 --   and `:help lua-guide-options`
-vim.o.list = true
-vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+vim.o.list            = true
+vim.opt.listchars     = { tab = '» ', trail = '·', nbsp = '␣' }
 
 -- Preview substitutions live, as you type!
-vim.o.inccommand = 'split'
+vim.o.inccommand      = 'split'
 
 -- Show which line your cursor is on
-vim.o.cursorline = true
+vim.o.cursorline      = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
-vim.o.scrolloff = 10
+vim.o.scrolloff       = 10
 
 -- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`),
 -- instead raise a dialog asking if you wish to save the current file(s)
 -- See `:help 'confirm'`
-vim.o.confirm = true
+vim.o.confirm         = true
 
 -- ============================================================
 -- This is mostly taken from the MiniMax config
 -- ============================================================
-vim.o.pumborder      = 'single'   -- Use border in popup menu
-vim.o.pumheight      = 10         -- Make popup menu smaller
-vim.o.pummaxwidth    = 100        -- Make popup menu not too wide
+vim.o.pumborder       = 'single' -- Use border in popup menu
+vim.o.pumheight       = 10      -- Make popup menu smaller
+vim.o.pummaxwidth     = 100     -- Make popup menu not too wide
 
 -- Builtin auto indenting
-vim.o.autoindent = true
+vim.o.autoindent      = true
 
 -- Improve comment editing
-vim.o.formatoptions = "rqnl1j" -- Improve comment editing
+vim.o.formatoptions   = "rqnl1j" -- Improve comment editing
 
-vim.o.colorcolumn = "+1"
+vim.o.colorcolumn     = "+1"
 
-vim.o.incsearch = true
-vim.o.infercase = true
-vim.o.smartindent = true
+vim.o.incsearch       = true
+vim.o.infercase       = true
+vim.o.smartindent     = true
 
-vim.o.shortmess      = 'CFOSWaco' -- Disable some built-in completion messages
-vim.o.splitkeep      = 'screen'   -- Reduce scroll during window split
-vim.o.winborder      = 'single'   -- Use border in floating windows
-vim.o.ruler          = false      -- Don't show cursor coordinates (shown in status bar)
+vim.o.shortmess       = 'CFOSWaco' -- Disable some built-in completion messages
+vim.o.splitkeep       = 'screen'  -- Reduce scroll during window split
+vim.o.winborder       = 'single'  -- Use border in floating windows
+vim.o.ruler           = false     -- Don't show cursor coordinates (shown in status bar)
 
 -- COMPLETION
 vim.o.complete        = '.,w,b,kspell'                  -- Use less sources
@@ -106,13 +106,13 @@ vim.o.completetimeout = 100                             -- Limit sources delay
 -- Don't auto-wrap comments and don't insert comment leader after hitting 'o'.
 -- Do on `FileType` to always override these changes from filetype plugins.
 vim.api.nvim_create_autocmd('FileType', {
-  callback = function() vim.cmd('setlocal formatoptions-=c formatoptions-=o') end,
+    callback = function() vim.cmd('setlocal formatoptions-=c formatoptions-=o') end,
 })
 
 -- Cleaning up diagnostic, only show text on current line, signs otherwise
 vim.diagnostic.config({
-  signs = { severity = { min = 'WARN', max = 'ERROR' } },
-  underline = { severity = { min = 'HINT', max = 'ERROR' } },
-  virtual_text = { current_line = true, severity = { min = 'HINT', max = 'ERROR' } },
-  update_in_insert = false,
+    signs = { severity = { min = 'WARN', max = 'ERROR' } },
+    underline = { severity = { min = 'HINT', max = 'ERROR' } },
+    virtual_text = { current_line = true, severity = { min = 'HINT', max = 'ERROR' } },
+    update_in_insert = false,
 })

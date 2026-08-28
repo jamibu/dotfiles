@@ -12,7 +12,7 @@ require('mini.starter').setup()
 require('mini.sessions').setup()
 require('mini.files').setup({ windows = { preview = true } })
 require('mini.diff').setup({
-  view = { style = 'number' },
+    view = { style = 'number' },
 })
 require('mini.git').setup()
 
@@ -21,25 +21,25 @@ require('mini.notify').setup()
 -- Clue
 local miniclue = require('mini.clue')
 miniclue.setup({
-  triggers = {
-    { mode = { 'n', 'x' }, keys = '<Leader>' },
-  },
+    triggers = {
+        { mode = { 'n', 'x' }, keys = '<Leader>' },
+    },
 
-  clues = {
-    -- Group labels shown before you've typed the second key
-    { mode = 'n', keys = '<Leader>c', desc = 'Trouble (LSP)' },
-    { mode = 'n', keys = '<Leader>e', desc = 'Files' },
-    { mode = 'n', keys = '<Leader>f', desc = 'Find' },
-    { mode = 'n', keys = '<Leader>g', desc = 'Git' },
-    { mode = 'n', keys = '<Leader>h', desc = 'Harpoon' },
-    { mode = 'n', keys = '<Leader>l', desc = 'LSP' },
-    { mode = 'n', keys = '<Leader>t', desc = 'Toggle' },
-    { mode = 'n', keys = '<Leader>x', desc = 'Trouble' },
-  },
+    clues = {
+        -- Group labels shown before you've typed the second key
+        { mode = 'n', keys = '<Leader>c', desc = 'Trouble (LSP)' },
+        { mode = 'n', keys = '<Leader>e', desc = 'Files' },
+        { mode = 'n', keys = '<Leader>f', desc = 'Find' },
+        { mode = 'n', keys = '<Leader>g', desc = 'Git' },
+        { mode = 'n', keys = '<Leader>h', desc = 'Harpoon' },
+        { mode = 'n', keys = '<Leader>l', desc = 'LSP' },
+        { mode = 'n', keys = '<Leader>t', desc = 'Toggle' },
+        { mode = 'n', keys = '<Leader>x', desc = 'Trouble' },
+    },
 
-  window = {
-    delay = 300, -- ms before popup shows; default is 1000 if omitted
-  },
+    window = {
+        delay = 300, -- ms before popup shows; default is 1000 if omitted
+    },
 })
 
 -- Completion — pairs with the complete/completeopt/completetimeout you
@@ -60,4 +60,3 @@ require('mini.ai').setup()
 -- Autopairs
 require('mini.pairs').setup()
 require('mini.tabline').setup()
-

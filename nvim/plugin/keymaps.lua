@@ -1,6 +1,6 @@
 local nmap = function(lhs, rhs, desc)
-  -- See `:h vim.keymap.set()`
-  vim.keymap.set('n', lhs, rhs, { desc = desc })
+    -- See `:h vim.keymap.set()`
+    vim.keymap.set('n', lhs, rhs, { desc = desc })
 end
 
 -- Helper for setting normal mode keympaps with leader
@@ -9,18 +9,18 @@ end
 -- rhs: Command to run
 -- desc: Description, used with mini-clue
 local nmap_leader = function(suffix, rhs, desc)
-  vim.keymap.set('n', '<Leader>' .. suffix, rhs, { desc = desc })
+    vim.keymap.set('n', '<Leader>' .. suffix, rhs, { desc = desc })
 end
 
 -- Picker
-nmap_leader('ff', '<Cmd>Pick files<CR>',        'Files')
-nmap_leader('fg', '<Cmd>Pick grep_live<CR>',    'Grep live')
-nmap_leader('fb', '<Cmd>Pick buffers<CR>',      'Buffers')
+nmap_leader('ff', '<Cmd>Pick files<CR>', 'Files')
+nmap_leader('fg', '<Cmd>Pick grep_live<CR>', 'Grep live')
+nmap_leader('fb', '<Cmd>Pick buffers<CR>', 'Buffers')
 
 -- Git
-nmap_leader('gg', '<Cmd>Neogit<CR>',   'Neogit')
-nmap_leader('gb', '<Cmd>Gitsigns blame<CR>',   'Git blame')
-nmap_leader('gl', '<Cmd>Gitsigns blame_line<CR>',   'Git blame')
+nmap_leader('gg', '<Cmd>Neogit<CR>', 'Neogit')
+nmap_leader('gb', '<Cmd>Gitsigns blame<CR>', 'Git blame')
+nmap_leader('gl', '<Cmd>Gitsigns blame_line<CR>', 'Git blame')
 nmap_leader(
     'tb',
     function() require('gitsigns').toggle_current_line_blame() end,
@@ -43,43 +43,44 @@ nmap_leader('4', function() require('harpoon'):list():select(4) end, 'Harpoon fi
 -- - `<Leader>ei` - edit 'init.lua'
 -- - All mappings that use `edit_plugin_file` - edit 'plugin/' config files
 local edit_plugin_file = function(filename)
-  return string.format('<Cmd>edit %s/plugin/%s<CR>', vim.fn.stdpath('config'), filename)
+    return string.format('<Cmd>edit %s/plugin/%s<CR>', vim.fn.stdpath('config'), filename)
 end
 local explore_at_file = '<Cmd>lua MiniFiles.open(vim.api.nvim_buf_get_name(0))<CR>'
 local explore_quickfix = function()
-  vim.cmd(vim.fn.getqflist({ winid = true }).winid ~= 0 and 'cclose' or 'copen')
+    vim.cmd(vim.fn.getqflist({ winid = true }).winid ~= 0 and 'cclose' or 'copen')
 end
 local explore_locations = function()
-  vim.cmd(vim.fn.getloclist(0, { winid = true }).winid ~= 0 and 'lclose' or 'lopen')
+    vim.cmd(vim.fn.getloclist(0, { winid = true }).winid ~= 0 and 'lclose' or 'lopen')
 end
 
-nmap_leader('ed', '<Cmd>lua MiniFiles.open()<CR>',          'Directory')
-nmap_leader('ef', explore_at_file,                          'File directory')
-nmap_leader('ei', '<Cmd>edit $MYVIMRC<CR>',                 'init.lua')
-nmap_leader('ek', edit_plugin_file('keymaps.lua'),       'Keymaps config')
-nmap_leader('em', edit_plugin_file('mini.lua'),          'MINI config')
+nmap_leader('ed', '<Cmd>lua MiniFiles.open()<CR>', 'Directory')
+nmap_leader('ef', explore_at_file, 'File directory')
+nmap_leader('ei', '<Cmd>edit $MYVIMRC<CR>', 'init.lua')
+nmap_leader('ek', edit_plugin_file('keymaps.lua'), 'Keymaps config')
+nmap_leader('em', edit_plugin_file('mini.lua'), 'MINI config')
 nmap_leader('en', '<Cmd>lua MiniNotify.show_history()<CR>', 'Notifications')
-nmap_leader('eo', edit_plugin_file('options.lua'),       'Options config')
-nmap_leader('ep', edit_plugin_file('plugins.lua'),       'Plugins config')
-nmap_leader('eq', explore_quickfix,                         'Quickfix list')
-nmap_leader('eQ', explore_locations,                        'Location list')
+nmap_leader('eo', edit_plugin_file('options.lua'), 'Options config')
+nmap_leader('ep', edit_plugin_file('plugins.lua'), 'Plugins config')
+nmap_leader('eq', explore_quickfix, 'Quickfix list')
+nmap_leader('eQ', explore_locations, 'Location list')
 
 -- LSP
-nmap_leader('la', '<Cmd>lua vim.lsp.buf.code_action()<CR>',     'Actions')
-nmap_leader('ld', '<Cmd>lua vim.diagnostic.open_float()<CR>',   'Diagnostic popup')
-nmap_leader('lf', '<Cmd>lua require("conform").format()<CR>',   'Format')
-nmap_leader('li', '<Cmd>lua vim.lsp.buf.implementation()<CR>',  'Implementation')
-nmap_leader('lh', '<Cmd>lua vim.lsp.buf.hover()<CR>',           'Hover')
-nmap_leader('ll', '<Cmd>lua vim.lsp.codelens.run()<CR>',        'Lens')
-nmap_leader('lr', '<Cmd>lua vim.lsp.buf.rename()<CR>',          'Rename')
-nmap_leader('lR', '<Cmd>lua vim.lsp.buf.references()<CR>',      'References')
-nmap_leader('ls', '<Cmd>lua vim.lsp.buf.definition()<CR>',      'Source definition')
+nmap_leader('la', '<Cmd>lua vim.lsp.buf.code_action()<CR>', 'Actions')
+nmap_leader('ld', '<Cmd>lua vim.diagnostic.open_float()<CR>', 'Diagnostic popup')
+nmap_leader('lf', '<Cmd>lua require("conform").format()<CR>', 'Format')
+nmap_leader('li', '<Cmd>lua vim.lsp.buf.implementation()<CR>', 'Implementation')
+nmap_leader('lh', '<Cmd>lua vim.lsp.buf.hover()<CR>', 'Hover')
+nmap_leader('ll', '<Cmd>lua vim.lsp.codelens.run()<CR>', 'Lens')
+nmap_leader('lr', '<Cmd>lua vim.lsp.buf.rename()<CR>', 'Rename')
+nmap_leader('lR', '<Cmd>lua vim.lsp.buf.references()<CR>', 'References')
+nmap_leader('ls', '<Cmd>lua vim.lsp.buf.definition()<CR>', 'Source definition')
 nmap_leader('lt', '<Cmd>lua vim.lsp.buf.type_definition()<CR>', 'Type definition')
 
 -- Trouble
 nmap_leader('xx', "<cmd>Trouble diagnostics toggle<cr>", "Diagnostics (Trouble)")
 nmap_leader("xX", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", "Buffer Diagnostics (Trouble)")
 nmap_leader("cs", "<cmd>Trouble symbols toggle focus=false<cr>", "Symbols (Trouble)")
-nmap_leader("cl", "<cmd>Trouble lsp toggle focus=false win.position=right<cr>", "LSP Definitions / references / ... (Trouble)")
+nmap_leader("cl", "<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
+    "LSP Definitions / references / ... (Trouble)")
 nmap_leader("xL", "<cmd>Trouble loclist toggle<cr>", "Location List (Trouble)")
 nmap_leader("xQ", "<cmd>Trouble qflist toggle<cr>", "Quickfix List (Trouble)")
