@@ -18,6 +18,8 @@ require('mini.git').setup()
 
 require('mini.notify').setup()
 
+require('mini.extra').setup()
+
 -- Clue
 local miniclue = require('mini.clue')
 miniclue.setup({
@@ -34,6 +36,7 @@ miniclue.setup({
     { mode = 'n', keys = '<Leader>h', desc = 'Harpoon' },
     { mode = 'n', keys = '<Leader>l', desc = 'LSP' },
     { mode = 'n', keys = '<Leader>t', desc = 'Toggle' },
+    { mode = 'n', keys = '<Leader>u', desc = 'Undotree' },
     { mode = 'n', keys = '<Leader>x', desc = 'Trouble' },
   },
 
@@ -61,7 +64,16 @@ require('mini.ai').setup()
 require('mini.pairs').setup()
 require('mini.tabline').setup()
 
----
+--- Snippets
+-- Define language patterns to work better with 'friendly-snippets'
+local latex_patterns = { 'latex/**/*.json', '**/latex.json' }
+local lang_patterns = {
+  tex = latex_patterns,
+  plaintex = latex_patterns,
+  -- Recognize special injected language of markdown tree-sitter parser
+  markdown_inline = { 'markdown.json' },
+}
+
 local snippets = require('mini.snippets')
 local config_path = vim.fn.stdpath('config')
 snippets.setup({

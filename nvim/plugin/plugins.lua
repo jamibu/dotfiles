@@ -16,6 +16,7 @@ vim.pack.add({
   'https://github.com/folke/trouble.nvim',
   'https://github.com/rafamadriz/friendly-snippets',
   'https://github.com/stevearc/oil.nvim',
+  'https://github.com/mbbill/undotree',
   { src = 'https://github.com/ThePrimeagen/harpoon', version = 'harpoon2' },
 })
 
@@ -36,7 +37,7 @@ require('gitsigns').setup({
 })
 
 -- Harpoon
-require('harpoon').setup() -- required, wires up autocmds
+require('harpoon'):setup() -- required, wires up autocmds
 
 -- Trouble
 require('trouble').setup()
