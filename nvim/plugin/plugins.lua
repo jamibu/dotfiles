@@ -8,6 +8,7 @@ vim.api.nvim_create_autocmd("PackChanged", {
 
 vim.pack.add({
     "https://github.com/nvim-treesitter/nvim-treesitter",
+    "https://github.com/nvim-treesitter/nvim-treesitter-textobjects",
     "https://github.com/lewis6991/gitsigns.nvim",
     "https://github.com/NeogitOrg/neogit",
     "https://github.com/ThePrimeagen/refactoring.nvim",
