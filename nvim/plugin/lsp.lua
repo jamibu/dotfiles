@@ -5,6 +5,7 @@ vim.pack.add({
 })
 
 vim.lsp.enable({
+  'stylua',
   'lua_ls',
   'gopls',
   'rust_analyzer',
