@@ -52,14 +52,14 @@ local explore_locations = function() vim.cmd(vim.fn.getloclist(0, { winid = true
 
 nmap_leader('ed', '<Cmd>lua MiniFiles.open()<CR>', 'Directory')
 nmap_leader('ef', explore_at_file, 'File directory')
+nmap_leader('en', '<Cmd>lua MiniNotify.show_history()<CR>', 'Notifications')
+nmap_leader('eq', explore_quickfix, 'Quickfix list')
+nmap_leader('eQ', explore_locations, 'Location list')
 nmap_leader('ei', '<Cmd>edit $MYVIMRC<CR>', 'init.lua')
 nmap_leader('ek', edit_plugin_file('keymaps.lua'), 'Keymaps config')
 nmap_leader('em', edit_plugin_file('mini.lua'), 'MINI config')
-nmap_leader('en', '<Cmd>lua MiniNotify.show_history()<CR>', 'Notifications')
 nmap_leader('eo', edit_plugin_file('options.lua'), 'Options config')
 nmap_leader('ep', edit_plugin_file('plugins.lua'), 'Plugins config')
-nmap_leader('eq', explore_quickfix, 'Quickfix list')
-nmap_leader('eQ', explore_locations, 'Location list')
 
 -- LSP
 nmap_leader('la', '<Cmd>lua vim.lsp.buf.code_action()<CR>', 'Actions')
