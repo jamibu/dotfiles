@@ -14,6 +14,7 @@ vim.pack.add({
     "https://github.com/ThePrimeagen/refactoring.nvim",
     "https://github.com/nvim-lua/plenary.nvim",
     "https://github.com/folke/trouble.nvim",
+    "https://github.com/rafamadriz/friendly-snippets",
     { src = "https://github.com/ThePrimeagen/harpoon", version = "harpoon2" },
 })
 
