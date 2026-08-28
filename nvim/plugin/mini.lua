@@ -2,29 +2,28 @@ vim.pack.add({ 'https://github.com/nvim-mini/mini.nvim' })
 
 -- Icons — used by mini.pick, mini.statusline, and others. Install first.
 require('mini.icons').setup()
--- Statusline
 require('mini.statusline').setup()
 require('mini.tabline').setup()
 require('mini.notify').setup()
-
--- Fuzzy finder / picker — files, grep, buffers, help tags, etc.
 require('mini.starter').setup()
 require('mini.sessions').setup()
 require('mini.files').setup({ windows = { preview = true } })
+require('mini.cmdline').setup()
+require('mini.git').setup()
+require('mini.diff').setup({
+  view = { style = 'number' },
+})
+
+-- Picker + extra sources
 require('mini.pick').setup()
 require('mini.extra').setup()
-require('mini.cmdline').setup()
+
 -- Surround actions: saiw), sd', sr}] etc.
 require('mini.surround').setup()
 -- Textobjects: ci), dab, va" etc. — extends built-in a/i objects
 require('mini.ai').setup()
 -- Autopairs
 require('mini.pairs').setup()
-
-require('mini.git').setup()
-require('mini.diff').setup({
-  view = { style = 'number' },
-})
 
 -- Clue
 local miniclue = require('mini.clue')
