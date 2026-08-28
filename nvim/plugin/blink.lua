@@ -5,9 +5,7 @@ vim.pack.add({
 
 vim.api.nvim_create_autocmd('PackChanged', {
   pattern = 'blink.cmp',
-  callback = function(ev)
-    vim.cmd('BlinkCmp build')
-  end,
+  callback = function(ev) vim.cmd('BlinkCmp build') end,
 })
 
 local cmp = require('blink.cmp')

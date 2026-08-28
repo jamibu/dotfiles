@@ -27,9 +27,7 @@ vim.o.showmode = false
 --  Schedule the setting after `UiEnter` because it can increase startup-time.
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
-vim.schedule(function()
-  vim.o.clipboard = 'unnamedplus'
-end)
+vim.schedule(function() vim.o.clipboard = 'unnamedplus' end)
 
 -- Enable undo/redo changes even after closing and reopening a file
 vim.o.undofile = true
@@ -108,9 +106,7 @@ vim.o.completetimeout = 100 -- Limit sources delay
 -- Don't auto-wrap comments and don't insert comment leader after hitting 'o'.
 -- Do on `FileType` to always override these changes from filetype plugins.
 vim.api.nvim_create_autocmd('FileType', {
-  callback = function()
-    vim.cmd('setlocal formatoptions-=c formatoptions-=o')
-  end,
+  callback = function() vim.cmd('setlocal formatoptions-=c formatoptions-=o') end,
 })
 
 -- Cleaning up diagnostic, only show text on current line, signs otherwise
