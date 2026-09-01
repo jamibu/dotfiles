@@ -4,6 +4,7 @@ vim.pack.add({ 'https://github.com/nvim-mini/mini.nvim' })
 require('mini.icons').setup()
 require('mini.statusline').setup()
 require('mini.tabline').setup()
+require('mini.bufremove').setup()
 require('mini.notify').setup()
 require('mini.starter').setup()
 require('mini.sessions').setup()
@@ -17,7 +18,6 @@ require('mini.diff').setup({
 -- Picker + extra sources
 require('mini.pick').setup()
 require('mini.extra').setup()
-
 -- Surround actions: saiw), sd', sr}] etc.
 require('mini.surround').setup()
 -- Textobjects: ci), dab, va" etc. — extends built-in a/i objects
@@ -34,7 +34,7 @@ miniclue.setup({
 
   clues = {
     -- Group labels shown before you've typed the second key
-    { mode = 'n', keys = '<Leader>c', desc = 'Trouble (LSP)' },
+    { mode = 'n', keys = '<Leader>b', desc = 'Buffers' },
     { mode = 'n', keys = '<Leader>e', desc = 'Files' },
     { mode = 'n', keys = '<Leader>f', desc = 'Find' },
     { mode = 'n', keys = '<Leader>g', desc = 'Git' },
@@ -43,6 +43,7 @@ miniclue.setup({
     { mode = 'n', keys = '<Leader>t', desc = 'Toggle' },
     { mode = 'n', keys = '<Leader>u', desc = 'Undotree' },
     { mode = 'n', keys = '<Leader>x', desc = 'Trouble' },
+    { mode = 'n', keys = '<Leader>c', desc = 'Trouble (LSP)' },
   },
 
   window = {
