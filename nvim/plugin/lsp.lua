@@ -12,9 +12,10 @@ vim.lsp.enable({
   'ols',
   'ruff',
   'ty',
-  'typescript_language_server',
-  'prettier',
+  'ts_ls',
   'eslint',
+  'phpactor',
+  'vue_ls',
 })
 
 -- See also:
@@ -27,10 +28,22 @@ require('conform').setup({
     lsp_format = 'fallback',
   },
   format_on_save = {
-    timeout_ms = 500,
+    timeout_ms = 5000,
   },
   formatters_by_ft = {
     lua = { 'stylua' },
+    vue = { 'prettier' },
+    javascript = { 'prettier' },
+    typescript = { 'prettier' },
+    javascriptreact = { 'prettier' },
+    typescriptreact = { 'prettier' },
+    html = { 'prettier' },
+    css = { 'prettier' },
+    json = { 'prettier' },
+    jsonc = { 'prettier' },
+    yaml = { 'prettier' },
+    markdown = { 'prettier' },
+    php = { 'php_cs_fixer' },
   },
 })
 
